@@ -4,8 +4,10 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import SlideItem from "./SlideItem";
+import { useSelector } from "react-redux";
 
 export default function Trends(props: any) {
+  const { width } = useSelector<any, any>((state) => state.stateManager);
   return (
     <div className="mt-5">
       {/* Header of Slider */}
@@ -18,7 +20,9 @@ export default function Trends(props: any) {
       {/* The Slider */}
       <section className="py-5 px-5 select-none">
         <Swiper
-          slidesPerView={4.5}
+          slidesPerView={
+            width > 1375 ? 4.5 : width > 992 ? 3.5 : width > 679 ? 2.5 : 1.5
+          }
           centeredSlides={false}
           spaceBetween={30}
           grabCursor={true}
@@ -27,7 +31,12 @@ export default function Trends(props: any) {
           {props.data.map((item: any, index: any) => {
             return (
               <SwiperSlide className="cursor-pointer" key={index}>
-                <SlideItem img={item.img} title={item.title} rate={item.rate} desc={item.desc} />
+                <SlideItem
+                  img={item.img}
+                  title={item.title}
+                  rate={item.rate}
+                  desc={item.desc}
+                />
               </SwiperSlide>
             );
           })}
