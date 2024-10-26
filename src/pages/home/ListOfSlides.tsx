@@ -1,9 +1,9 @@
 import Slider from '../../components/Slider'
-import data from "../../dataJson/trends.json";
+import data from "../../dataJson/movies.json";
 
 export default function ListOfSlides() {
   return (
-    <div className='md:px-20'>
+    <div className='md:px-20 px-5'>
         <Slider sliderTitle="Trends Movies" data={data}/>
         <Slider sliderTitle="Trends Series" data={data}/>
         <Slider sliderTitle="Best Of 2024" data={data}/>
