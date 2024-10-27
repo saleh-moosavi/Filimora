@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 export default function SlideItem(props: any) {
   return (
-    <div>
+    <Link to={`/${props.index}`}>
       <div className="relative rounded-lg overflow-hidden group">
         <img className="rounded-lg h-[30rem] md:h-80 lg:h-96 xl:h-[30rem] w-full object-cover" src={props.img} alt={props.title} />
         <p className="absolute top-0 left-0 text-white m-2 p-2 text-xs font-semibold bg-gray-700 border-[3px] border-yellow-500 rounded-full group-hover:scale-0 transition-all duration-300">
@@ -13,6 +15,6 @@ export default function SlideItem(props: any) {
       <h3 className="text-white font-semibold text-center py-5">
         {props.title}
       </h3>
-    </div>
+    </Link>
   );
 }

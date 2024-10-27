@@ -13,7 +13,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/item" element={<MovieItem />} />
+            <Route path="/:id" element={<MovieItem />} />
             <Route path="/category" element={<Category />} />
             <Route path="/*" element={<PageNotFound />} />
           </Routes>

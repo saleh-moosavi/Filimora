@@ -33,6 +33,7 @@ export default function Slider(props: any) {
               <SwiperSlide className="cursor-pointer" key={index}>
                 <SlideItem
                   img={item.img}
+                  index={index}
                   title={item.title}
                   rate={item.rate}
                   desc={item.desc}

@@ -2,7 +2,8 @@ import { CiSearch } from "react-icons/ci";
 import { FaCaretDown } from "react-icons/fa";
 import { TbBrandNetflix } from "react-icons/tb";
 import NavDropList from "./NavDropList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface DesktopNavType {
   scroll: any;
@@ -16,6 +17,10 @@ export default function DesktopNav({
   handleSearchBarWidth,
 }: DesktopNavType) {
   const [navId, setNavId] = useState(0);
+
+  useEffect(() => {
+    document.documentElement.classList.remove("overflow-hidden");
+  },[]);
   return (
     <div
       className={`flex justify-between fixed z-50 left-0 right-0 top-0 px-10 transition-all duration-500 py-5 ${
@@ -24,7 +29,9 @@ export default function DesktopNav({
     >
       <div className="flex gap-x-2">
         {/* header Logo */}
-        <TbBrandNetflix className="text-white text-4xl hover:text-stone-400 cursor-pointer transition-all duration-700" />
+        <Link to={"/"}>
+          <TbBrandNetflix className="text-white text-4xl hover:text-stone-400 cursor-pointer transition-all duration-700" />
+        </Link>
         {/* header search bar */}
         <label className="flex">
           <input

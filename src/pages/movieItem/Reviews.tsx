@@ -3,7 +3,7 @@ import data from "../../dataJson/reviews.json";
 
 export default function Reviews() {
   return (
-    <div className="px-12 pt-5">
+    <div className="px-12 pt-5 xl:max-w-[85rem] xl:mx-auto">
       {/* Title */}
       <div className="flex justify-between bg-gray-900 p-5 rounded-lg">
         <h3 className="text-white text-lg font-semibold">Comments</h3>

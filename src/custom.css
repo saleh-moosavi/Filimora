@@ -1,0 +1,62 @@
+/* dark to light text*/
+.color-one {
+  color: wheat;
+}
+.color-one-hover {
+  color: rgb(255, 255, 255);
+}
+.color-two {
+  color: wheat;
+}
+.color-two-hover {
+  color: rgb(255, 255, 255);
+}
+.color-three {
+  color: wheat;
+}
+.color-three-hover {
+  color: rgb(255, 255, 255);
+}
+.color-four {
+  color: wheat;
+}
+.color-four-hover {
+  color: rgb(255, 255, 255);
+}
+.color-five {
+  color: wheat;
+}
+.color-five-hover {
+  color: rgb(255, 255, 255);
+}
+.color-six {
+  color: rgb(255, 255, 255);
+}
+.color-six-hover {
+  color: rgb(172, 172, 172);
+}
+
+/* gradients*/
+.color-gradient {
+  color: wheat;
+}
+
+/* dark to light bg*/
+.bg-one {
+  background-color: wheat;
+}
+.bg-two {
+  background-color: wheat;
+}
+.bg-three {
+  background-color: rgb(27, 25, 38);
+}
+.bg-four {
+  background-color: wheat;
+}
+.bg-five {
+  background-color: wheat;
+}
+.bg-six {
+  background-color: rgb(38, 38, 38);
+}
