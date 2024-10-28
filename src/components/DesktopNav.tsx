@@ -20,11 +20,11 @@ export default function DesktopNav({
 
   useEffect(() => {
     document.documentElement.classList.remove("overflow-hidden");
-  },[]);
+  }, []);
   return (
     <div
       className={`flex justify-between fixed z-50 left-0 right-0 top-0 px-10 transition-all duration-500 py-5 ${
-        scroll > 20 && "bg-black/60 backdrop-blur-sm"
+        scroll > 20 && "mybg-desktop-nav backdrop-blur-sm"
       }`}
     >
       <div className="flex gap-x-2">
@@ -55,34 +55,42 @@ export default function DesktopNav({
 
       {/* header Links */}
       <ul className="text-white flex group gap-x-5 items-center font-semibold hover:*:text-stone-400 *:cursor-pointer *:transition-all *:duration-300">
-        <li
-          className="flex gap-x-1 items-center"
-          onMouseOver={() => setNavId(0)}
-        >
-          Collection
-          <FaCaretDown />
-        </li>
-        <li
-          className="flex gap-x-1 items-center"
-          onMouseOver={() => setNavId(1)}
-        >
-          Anime
-          <FaCaretDown />
-        </li>
-        <li
-          className="flex gap-x-1 items-center"
-          onMouseOver={() => setNavId(2)}
-        >
-          Serie
-          <FaCaretDown />
-        </li>
-        <li
-          className="flex gap-x-1 items-center"
-          onMouseOver={() => setNavId(3)}
-        >
-          Movie
-          <FaCaretDown />
-        </li>
+        <Link to={"/category"}>
+          <li
+            className="flex gap-x-1 items-center"
+            onMouseOver={() => setNavId(0)}
+          >
+            Collection
+            <FaCaretDown />
+          </li>
+        </Link>
+        <Link to={"/category"}>
+          <li
+            className="flex gap-x-1 items-center"
+            onMouseOver={() => setNavId(1)}
+          >
+            Anime
+            <FaCaretDown />
+          </li>
+        </Link>
+        <Link to={"/category"}>
+          <li
+            className="flex gap-x-1 items-center"
+            onMouseOver={() => setNavId(2)}
+          >
+            Serie
+            <FaCaretDown />
+          </li>
+        </Link>
+        <Link to={"/category"}>
+          <li
+            className="flex gap-x-1 items-center"
+            onMouseOver={() => setNavId(3)}
+          >
+            Movie
+            <FaCaretDown />
+          </li>
+        </Link>
         {/* header Sub navbar */}
         <section className="absolute mt-20 invisible group-hover:visible pe-12 top-0 right-0 left-0 w-screen">
           <NavDropList id={navId} />

@@ -9,19 +9,19 @@ export default function MovieDetail() {
   const params = useParams();
   const currentMovie = data[Number(params.id)];
   return (
-    <div className="bg-gray-700">
-      <div className="w-screen flex flex-col items-center md:grid grid-cols-3 md:pt-20 bg-gray-700 pb-10 xl:max-w-[85rem] xl:mx-auto px-6">
+    <div className="bg-three">
+      <div className="w-screen flex flex-col items-center md:grid grid-cols-3 md:pt-20 pb-10 xl:max-w-[85rem] xl:mx-auto px-6">
         <article className="mt-5">
           <img
             className="rounded-3xl w-[19rem] lg:max-w-96 md:w-10/12 object-cover mx-5"
             src={currentMovie.img}
           />
         </article>
-        <article className="col-span-2 md:flex md:flex-col md:justify-start text-white md:h-full md:ps-10">
-          <h3 className="md:text-xl lg:text-4xl font-bold text-white mt-5 mb-2 text-center md:text-left">
+        <article className="col-span-2 md:flex md:flex-col md:justify-start color-white md:h-full md:ps-10">
+          <h3 className="md:text-xl lg:text-4xl font-bold color-white mt-5 mb-2 text-center md:text-left">
             {currentMovie.title}
           </h3>
-          <p className="text-white text-xs lg:text-xl font-semibold md:text-base md:font-normal text-center md:text-left">
+          <p className="color-white text-xs lg:text-xl font-semibold md:text-base md:font-normal text-center md:text-left">
             {currentMovie.translatedTitle}
           </p>
           <section className="flex justify-center gap-x-5 py-5 md:justify-start lg:mt-5">
@@ -49,7 +49,7 @@ export default function MovieDetail() {
             <p>Status: {currentMovie.status}</p>
             <p>Year: {currentMovie.year}</p>
           </section>
-          <p className="flex gap-x-1 mt-5 text-white text-center md:text-left xl:text-lg">
+          <p className="flex gap-x-1 mt-5 color-white text-center md:text-left xl:text-lg">
             Genres:
             <ul className="flex gap-x-2">
               {currentMovie.genres?.map((item: any, index: any) => (
@@ -57,14 +57,14 @@ export default function MovieDetail() {
               ))}
             </ul>
           </p>
-          <p className="text-white text-center my-5 md:text-left xl:text-lg bg-gradient-to-r from-purple-700 via-blue-700 to-80% md:w-fit px-4 py-1 rounded-full">
+          <p className="color-black font-medium text-center my-5 md:text-left xl:text-lg detail-gradient md:w-fit px-4 py-1 rounded-full">
             Season {currentMovie.season} - Episode {currentMovie.episode} - added
           </p>
-          <p className="line-clamp-3 text-white md:my-5 hidden lg:block xl:text-lg">
+          <p className="line-clamp-3 color-white md:my-5 hidden lg:block xl:text-lg">
             {currentMovie.desc}
           </p>
         </article>
-        <p className="line-clamp-2 text-white px-5 text-center md:col-span-3 md:text-left md:my-5 lg:hidden">
+        <p className="line-clamp-2 color-white px-5 text-center md:col-span-3 md:text-left md:my-5 lg:hidden">
           {currentMovie.desc}
         </p>
       </div>

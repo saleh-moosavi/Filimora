@@ -19,7 +19,7 @@ export default function MovieDownloadLink() {
         {/* accordin header */}
         <div
           onClick={() => showAccordion(0)}
-          className={`flex items-center cursor-pointer justify-between w-full p-5 font-medium rtl:text-right bg-gray-700 rounded-t-lg ${
+          className={`flex items-center cursor-pointer justify-between w-full p-5 font-medium rtl:text-right bg-one rounded-t-lg ${
             !accordion[0] && "rounded-lg"
           }`}
         >
@@ -28,24 +28,24 @@ export default function MovieDownloadLink() {
         </div>
         {/* accordin Content */}
         <div
-          className={`p-5 bg-gray-950 rounded-b-lg ${
+          className={`p-5 bg-three rounded-b-lg ${
             !accordion[0] && "hidden"
           }`}
         >
-          <div className="flex items-center justify-between w-full p-5 bg-gray-900 rounded-full my-5">
-            <p className="bg-gradient-to-r from-blue-700 to-70% px-5 py-2 rounded-full cursor-pointer hover:shadow-[0_0_10px_#fff] transition-all duration-300">
+          <div className="flex items-center justify-between w-full p-5 bg-two rounded-full my-5">
+            <p className="download-gradient-one px-5 py-2 rounded-full cursor-pointer hover:shadow-[0_0_10px_#fff] transition-all duration-300">
               Download
             </p>
-            <p className="bg-gradient-to-l from-purple-700 to-70% px-5 py-2 rounded-full select-none">
+            <p className="download-gradient-two px-5 py-2 rounded-full select-none">
               Web-DL
             </p>
           </div>
 
-          <div className="flex items-center justify-between w-full p-5 bg-gray-900 rounded-full my-5">
-            <p className="bg-gradient-to-r from-blue-700 to-70% px-5 py-2 rounded-full cursor-pointer hover:shadow-[0_0_10px_#fff] transition-all duration-300">
+          <div className="flex items-center justify-between w-full p-5 bg-two rounded-full my-5">
+            <p className="download-gradient-one px-5 py-2 rounded-full cursor-pointer hover:shadow-[0_0_10px_#fff] transition-all duration-300">
               Download
             </p>
-            <p className="bg-gradient-to-l from-purple-700 to-70% px-5 py-2 rounded-full select-none">
+            <p className="download-gradient-two px-5 py-2 rounded-full select-none">
               1080 - Soft Sub
             </p>
           </div>
@@ -57,7 +57,7 @@ export default function MovieDownloadLink() {
         {/* accordin header */}
         <div
           onClick={() => showAccordion(1)}
-          className={`flex items-center cursor-pointer justify-between w-full p-5 font-medium rtl:text-right bg-gray-700 rounded-t-lg ${
+          className={`flex items-center cursor-pointer justify-between w-full p-5 font-medium rtl:text-right bg-one rounded-t-lg ${
             !accordion[1] && "rounded-lg"
           }`}
         >
@@ -66,24 +66,24 @@ export default function MovieDownloadLink() {
         </div>
         {/* accordin Content */}
         <div
-          className={`p-5 bg-gray-950 rounded-b-lg ${
+          className={`p-5 bg-three rounded-b-lg ${
             !accordion[1] && "hidden"
           }`}
         >
-          <div className="flex items-center justify-between w-full p-5 bg-gray-900 rounded-full my-5">
-            <p className="bg-gradient-to-r from-blue-700 to-70% px-5 py-2 rounded-full cursor-pointer hover:shadow-[0_0_10px_#fff] transition-all duration-300">
+          <div className="flex items-center justify-between w-full p-5 bg-two rounded-full my-5">
+            <p className="download-gradient-one px-5 py-2 rounded-full cursor-pointer hover:shadow-[0_0_10px_#fff] transition-all duration-300">
               Download
             </p>
-            <p className="bg-gradient-to-l from-purple-700 to-70% px-5 py-2 rounded-full select-none">
+            <p className="download-gradient-two px-5 py-2 rounded-full select-none">
               Web-DL
             </p>
           </div>
 
-          <div className="flex items-center justify-between w-full p-5 bg-gray-900 rounded-full my-5">
-            <p className="bg-gradient-to-r from-blue-700 to-70% px-5 py-2 rounded-full cursor-pointer hover:shadow-[0_0_10px_#fff] transition-all duration-300">
+          <div className="flex items-center justify-between w-full p-5 bg-two rounded-full my-5">
+            <p className="download-gradient-one px-5 py-2 rounded-full cursor-pointer hover:shadow-[0_0_10px_#fff] transition-all duration-300">
               Download
             </p>
-            <p className="bg-gradient-to-l from-purple-700 to-70% px-5 py-2 rounded-full select-none">
+            <p className="download-gradient-two px-5 py-2 rounded-full select-none">
               1080 - Soft Sub
             </p>
           </div>

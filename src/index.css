@@ -2,21 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: rgb(0, 136, 255);
-}
-
-::-webkit-scrollbar-track {
-  background-color: rgb(31, 41, 55);
-}
-
-* {
-  scroll-behavior: smooth;
-}
-
 @media screen and (max-width: 768px) {
   ::-webkit-scrollbar {
     width: 0px;

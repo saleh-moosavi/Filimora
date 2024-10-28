@@ -5,17 +5,20 @@ import "swiper/css";
 import "swiper/css/pagination";
 import SlideItem from "./SlideItem";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 export default function Slider(props: any) {
   const { width } = useSelector<any, any>((state) => state.stateManager);
   return (
     <div className="mt-5">
       {/* Header of Slider */}
-      <article className="flex justify-between px-5 rounded-lg text-white bg-gray-900 py-5 font-semibold">
+      <article className="flex justify-between px-5 rounded-lg color-white bg-one py-5 font-semibold">
         <p>{props.sliderTitle}</p>
-        <p className="flex items-center gap-x-3 cursor-pointer">
-          See More <IoIosArrowDroprightCircle />
-        </p>
+        <Link to={"/category"}>
+          <p className="flex items-center gap-x-3 cursor-pointer">
+            See More <IoIosArrowDroprightCircle />
+          </p>
+        </Link>
       </article>
       {/* The Slider */}
       <section className="py-5 select-none">
