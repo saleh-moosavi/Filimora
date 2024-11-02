@@ -21,7 +21,7 @@ export default function MobileNav() {
   };
 
   return (
-    <div className="w-1/2 mx-auto mb-3 fixed z-50 left-0 right-0 bottom-0">
+    <div className="w-2/3 mx-auto mb-3 fixed z-50 left-0 right-0 bottom-0">
       <ul className="flex justify-between w-full rounded-full mybg-mobile-nav px-5 py-2 border-b-white/50 border-r-white/50 border-b-2 border-r-2">
         <Link to={"/"}>
           <TbBrandNetflix className="color-white text-2xl sm:text-4xl" />

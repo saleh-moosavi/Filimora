@@ -14,7 +14,7 @@ export default function MobileMenu(props: any) {
     setIsOpen(allMenu);
   };
   return (
-    <div className="color-white flex justify-center items-center w-full h-full cursor-auto">
+    <div className="color-white flex justify-center items-center w-10/12 mx-auto h-full cursor-auto">
       <ul className="bg-mobile-menu backdrop-blur-md rounded-xl flex flex-col w-96 h-3/4 cursor-auto overflow-y-auto pb-5 *:cursor-pointer border-b-white/50 border-r-white/50 border-b-[3px] border-r-[3px]">
         <li
           className="hover:text-red-500 p-5 self-end text-3xl"

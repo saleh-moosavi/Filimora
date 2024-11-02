@@ -18,7 +18,7 @@ export default function MovieItem() {
       <MovieDetail />
       <MovieDownloadLink />
       <Reviews />
-      <div className="px-12 xl:max-w-[85rem] xl:mx-auto">
+      <div className="px-7 md:px-12 xl:max-w-[85rem] xl:mx-auto">
         <Slider sliderTitle="Related" data={data} />
       </div>
     </div>

@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 export default function QuestionsPage() {
+  useEffect(() => {
+    window.scrollY > 1 && window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="color-white px-5 xl:max-w-[85rem] xl:mx-auto py-5 md:pt-32">
       <article className="mb-10">

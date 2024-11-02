@@ -13,7 +13,7 @@ export default function MovieDetail() {
       <div className="w-screen flex flex-col items-center md:grid grid-cols-3 md:pt-20 pb-10 xl:max-w-[85rem] xl:mx-auto px-6">
         <article className="mt-5">
           <img
-            className="rounded-3xl w-[19rem] lg:max-w-96 md:w-10/12 object-cover mx-5"
+            className="rounded-3xl w-[19rem] mx-auto lg:max-w-96 md:w-10/12 object-cover md:mx-5"
             src={currentMovie.img}
           />
         </article>

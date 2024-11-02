@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import { TiTick } from "react-icons/ti";
 
 export default function PremiumPage() {
+  useEffect(() => {
+    window.scrollY > 1 && window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="color-white px-5 xl:max-w-[85rem] xl:mx-auto py-5 md:pt-24">
       <div className="text-center mb-10">
@@ -10,7 +14,7 @@ export default function PremiumPage() {
         </p>
       </div>
       <section className="grid gap-5 justify-items-center md:grid-cols-2 lg:grid-cols-3">
-        <article className="bg-three flex flex-col *:px-5 gap-y-5 py-5 rounded-lg md:w-72 w-96 border-b border-r">
+        <article className="bg-three flex flex-col *:px-5 gap-y-5 py-5 rounded-lg md:w-72 w-72 border-b border-r">
           <div className="">
             <h3 className="text-xl font-semibold">Startup Plan</h3>
             <h3 className="text-lg mt-3">
@@ -49,7 +53,7 @@ export default function PremiumPage() {
           </ul>
           <button className="bg-one px-5 py-2 rounded-xl mx-5">Purchase</button>
         </article>
-        <article className="bg-three flex flex-col *:px-5 gap-y-5 py-5 rounded-lg md:w-72 w-96 border-b border-r">
+        <article className="bg-three flex flex-col *:px-5 gap-y-5 py-5 rounded-lg md:w-72 w-72 border-b border-r">
           <div className="">
             <h3 className="text-xl font-semibold">Startup Plan</h3>
             <h3 className="text-lg mt-3">
@@ -88,7 +92,7 @@ export default function PremiumPage() {
           </ul>
           <button className="bg-one px-5 py-2 rounded-xl mx-5">Purchase</button>
         </article>
-        <article className="bg-three flex flex-col *:px-5 gap-y-5 py-5 rounded-lg md:w-72 w-96 border-b border-r">
+        <article className="bg-three flex flex-col *:px-5 gap-y-5 py-5 rounded-lg md:w-72 w-72 border-b border-r">
           <div className="">
             <h3 className="text-xl font-semibold">Startup Plan</h3>
             <h3 className="text-lg mt-3">

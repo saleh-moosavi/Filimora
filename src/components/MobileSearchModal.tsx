@@ -2,7 +2,7 @@ import { IoCloseSharp } from "react-icons/io5";
 
 export default function MobileSearchModal(props: any) {
   return (
-    <div className="color-white flex justify-center items-center w-full h-full cursor-auto">
+    <div className="color-white flex justify-center items-center w-10/12 mx-auto h-full cursor-auto">
       <div className="bg-mobile-search backdrop-blur-md rounded-xl pb-10 flex flex-col w-96 cursor-auto *:cursor-pointer border-b-white/50 border-r-white/50 border-b-[3px] border-r-[3px]">
         <p
           className="hover:text-red-500 p-5 self-end text-3xl"
