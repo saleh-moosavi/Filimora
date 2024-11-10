@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import MobileSubMenu from "./MobileSubMenu";
-import { Link } from "react-router-dom";
 
 export default function MobileMenu(props: any) {
   const [isOpen, setIsOpen] = useState(Array(4).fill(false));
@@ -22,42 +21,39 @@ export default function MobileMenu(props: any) {
         >
           <IoCloseSharp />
         </li>
-        <Link to={"/category"}>
-          <li
-            className="color-white font-semibold text-lg bg-two-hover p-5 hover:shadow-[inset_3px_0_0_#fff] hover:ps-8 transition-all duration-500"
-            onClick={() => toggleSubMenu(0)}
-          >
-            Movie
-          </li>
-        </Link>
+
+        <li
+          className="color-white font-semibold text-lg bg-two-hover p-5 hover:shadow-[inset_3px_0_0_#fff] hover:ps-8 transition-all duration-500"
+          onClick={() => toggleSubMenu(0)}
+        >
+          Movie
+        </li>
         <MobileSubMenu id={0} isOpen={isOpen[0]} />
-        <Link to={"/category"}>
-          <li
-            className="color-white font-semibold text-lg bg-two-hover p-5 hover:shadow-[inset_3px_0_0_#fff] hover:ps-8 transition-all duration-500"
-            onClick={() => toggleSubMenu(1)}
-          >
-            Serie
-          </li>
-        </Link>
+
+        <li
+          className="color-white font-semibold text-lg bg-two-hover p-5 hover:shadow-[inset_3px_0_0_#fff] hover:ps-8 transition-all duration-500"
+          onClick={() => toggleSubMenu(1)}
+        >
+          Serie
+        </li>
         <MobileSubMenu id={1} isOpen={isOpen[1]} />
-        <Link to={"/category"}>
-          <li
-            className="color-white font-semibold text-lg bg-two-hover p-5 hover:shadow-[inset_3px_0_0_#fff] hover:ps-8 transition-all duration-500"
-            onClick={() => toggleSubMenu(2)}
-          >
-            Anime
-          </li>
-        </Link>
+
+        <li
+          className="color-white font-semibold text-lg bg-two-hover p-5 hover:shadow-[inset_3px_0_0_#fff] hover:ps-8 transition-all duration-500"
+          onClick={() => toggleSubMenu(2)}
+        >
+          Anime
+        </li>
         <MobileSubMenu id={2} isOpen={isOpen[2]} />
-        <Link to={"/category"}>
-          <li
-            className="color-white font-semibold text-lg bg-two-hover p-5 hover:shadow-[inset_3px_0_0_#fff] hover:ps-8 transition-all duration-500"
-            onClick={() => toggleSubMenu(3)}
-          >
-            Collection
-          </li>
-        </Link>
+
+        <li
+          className="color-white font-semibold text-lg bg-two-hover p-5 hover:shadow-[inset_3px_0_0_#fff] hover:ps-8 transition-all duration-500"
+          onClick={() => toggleSubMenu(3)}
+        >
+          Collection
+        </li>
         <MobileSubMenu id={3} isOpen={isOpen[3]} />
+
         <li className="self-center bg-two px-10 py-2 mt-auto rounded-full">
           Sign In
         </li>
