@@ -2,9 +2,9 @@ import { useState } from "react";
 import Accordion from "../../components/Accordion";
 
 export default function MovieDownloadLink() {
-  const [accordion, setAccordion] = useState(Array(5).fill(false));
+  const [accordion, setAccordion] = useState<boolean[]>(Array(5).fill(false));
 
-  const showAccordion = (id: any) => {
+  const showAccordion = (id: number) => {
     const allAccordions = [...accordion];
     const current = allAccordions[id];
     allAccordions.fill(false);

@@ -7,8 +7,8 @@ import MobileMenu from "./MobileMenu";
 import MobileSearchModal from "./MobileSearchModal";
 
 export default function MobileNav() {
-  const [mobileMenu, setMobileMenu] = useState(false);
-  const [mobileSearch, setMobileSearch] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState<boolean>(false);
+  const [mobileSearch, setMobileSearch] = useState<boolean>(false);
 
   const toggleMenu = () => {
     setMobileMenu(!mobileMenu);

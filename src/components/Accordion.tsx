@@ -1,8 +1,8 @@
 import { FaAngleDown } from "react-icons/fa";
 
 export default function Accordion(props: {
-  accordion: any;
-  showAccordion: any;
+  accordion: boolean[];
+  showAccordion: (id: number) => void;
   id: number;
   season: number;
 }) {

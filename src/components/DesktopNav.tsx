@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 interface DesktopNavType {
-  scroll: any;
-  searchWidth: any;
-  handleSearchBarWidth: any;
+  scroll: number;
+  searchWidth: string;
+  handleSearchBarWidth: () => void;
 }
 
 export default function DesktopNav({

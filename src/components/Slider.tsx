@@ -7,8 +7,30 @@ import SlideItem from "./SlideItem";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-export default function Slider(props: any) {
-  const { width } = useSelector<any, any>((state) => state.stateManager);
+type SliderType = {
+  sliderTitle: string;
+  data: {
+    img: string;
+    title: string;
+    desc: string;
+    rate: string;
+    translatedTitle: string;
+    channel: string;
+    subtitle: string;
+    age: string;
+    imdbRate: string;
+    time: string;
+    country: string;
+    status: string;
+    year: string;
+    genres: string[];
+    season: number;
+    episode: number;
+  }[];
+};
+
+export default function Slider(props: SliderType) {
+  const { width } = useSelector<any,any>((state) => state.stateManager);
   return (
     <div className="mt-5">
       {/* Header of Slider */}
@@ -31,7 +53,7 @@ export default function Slider(props: any) {
           grabCursor={true}
           modules={[Pagination]}
         >
-          {props.data.map((item: any, index: any) => {
+          {props.data.map((item, index:number) => {
             return (
               <SwiperSlide className="cursor-pointer" key={index}>
                 <SlideItem

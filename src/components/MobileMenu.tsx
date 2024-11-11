@@ -2,10 +2,10 @@ import { useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import MobileSubMenu from "./MobileSubMenu";
 
-export default function MobileMenu(props: any) {
-  const [isOpen, setIsOpen] = useState(Array(4).fill(false));
+export default function MobileMenu(props: { toggleMenu: () => void }) {
+  const [isOpen, setIsOpen] = useState<boolean[]>(Array(4).fill(false));
 
-  const toggleSubMenu = (id: any) => {
+  const toggleSubMenu = (id: number) => {
     const allMenu = [...isOpen];
     const current = allMenu[id];
     allMenu.fill(false);

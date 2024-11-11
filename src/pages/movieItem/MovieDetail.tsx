@@ -41,7 +41,8 @@ export default function MovieDetail() {
               {currentMovie.imdbRate}
             </p>
             <p className="flex flex-col items-center gap-y-2 font-semibold text-sm md:text-base">
-              <MdAccessTime className="text-lg md:text-3xl" /> {currentMovie.time}
+              <MdAccessTime className="text-lg md:text-3xl" />{" "}
+              {currentMovie.time}
             </p>
           </section>
           <section className="flex justify-center gap-x-5 md:justify-start xl:text-lg xl:mt-5">
@@ -52,13 +53,14 @@ export default function MovieDetail() {
           <p className="flex gap-x-1 mt-5 color-white text-center md:text-left xl:text-lg">
             Genres:
             <ul className="flex gap-x-2">
-              {currentMovie.genres?.map((item: any, index: any) => (
+              {currentMovie.genres?.map((item: string, index: number) => (
                 <li key={index}>{item}</li>
               ))}
             </ul>
           </p>
           <p className="color-black font-medium text-center my-5 md:text-left xl:text-lg detail-gradient md:w-fit px-4 py-1 rounded-full">
-            Season {currentMovie.season} - Episode {currentMovie.episode} - added
+            Season {currentMovie.season} - Episode {currentMovie.episode} -
+            added
           </p>
           <p className="line-clamp-3 color-white md:my-5 hidden lg:block xl:text-lg">
             {currentMovie.desc}

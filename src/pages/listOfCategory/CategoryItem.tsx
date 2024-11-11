@@ -1,6 +1,25 @@
 import { Link } from "react-router-dom";
 
-export default function CategoryItem({ item , index}: any) {
+type CategoryItemType = {
+  img: string;
+  title: string;
+  desc: string;
+  rate: string;
+  translatedTitle: string;
+  channel: string;
+  subtitle: string;
+  age: string;
+  imdbRate: string;
+  time: string;
+  country: string;
+  status: string;
+  year: string;
+  genres: string[];
+  season: number;
+  episode: number;
+};
+
+export default function CategoryItem({item,index}: {item: CategoryItemType;index: number;}) {
   return (
     <Link to={`/${index}`}>
       <div className="relative rounded-lg overflow-hidden group cursor-pointer">
@@ -17,7 +36,7 @@ export default function CategoryItem({ item , index}: any) {
             {item.desc}
           </p>
           <ul className="color-white font-medium text-sm text-justify flex gap-x-2 pt-2 line-clamp-4">
-            {item.genres.map((gen: any, index: any): any => {
+            {item.genres.map((gen: string, index: number): React.ReactNode => {
               return <li key={index}>{gen}</li>;
             })}
           </ul>
