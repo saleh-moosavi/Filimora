@@ -7,7 +7,7 @@ export default function Reviews() {
       {/* Title */}
       <div className="flex justify-between bg-one p-5 rounded-lg">
         <h3 className="color-white md:text-lg font-semibold">Comments</h3>
-        <h3 className="color-white md:text-lg font-semibold">Add +</h3>
+        <h3 className="color-white md:text-lg font-semibold cursor-pointer">Add +</h3>
       </div>
       {/* Comment section */}
       {data.map((item, index) => {
@@ -30,7 +30,7 @@ export default function Reviews() {
                 <p className="color-white text-justify text-sm font-semibold md:text-base md:font-normal">{item.comment}</p>
               </section>
               <section className="flex justify-between items-center mt-5">
-                <p className="px-5 py-2 bg-two rounded-full color-white text-sm">
+                <p className="px-5 py-2 bg-two rounded-full color-white text-sm cursor-pointer">
                   Replay
                 </p>
                 <div>

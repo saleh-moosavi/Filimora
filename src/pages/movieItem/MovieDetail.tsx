@@ -21,14 +21,18 @@ export default function MovieDetail() {
           <h3 className="md:text-xl lg:text-4xl font-bold color-white mt-5 mb-2 text-center md:text-left">
             {currentMovie.title}
           </h3>
-          <p className="color-white text-xs lg:text-xl font-semibold md:text-base md:font-normal text-center md:text-left">
-            {currentMovie.translatedTitle}
-          </p>
-          <section className="flex justify-center gap-x-5 py-5 md:justify-start lg:mt-5">
-            <p className="flex flex-col items-center gap-y-2 font-semibold text-sm md:text-base">
-              <GrChannel className="text-lg md:text-3xl" />
-              {currentMovie.channel}
+          {currentMovie.translatedTitle && (
+            <p className="color-white text-xs lg:text-xl font-semibold md:text-base md:font-normal text-center md:text-left">
+              {currentMovie.translatedTitle}
             </p>
+          )}
+          <section className="flex justify-center gap-x-5 py-5 md:justify-start lg:mt-5">
+            {currentMovie.channel && (
+              <p className="flex flex-col items-center gap-y-2 font-semibold text-sm md:text-base">
+                <GrChannel className="text-lg md:text-3xl" />
+                {currentMovie.channel}
+              </p>
+            )}
             <p className="flex flex-col items-center gap-y-2 font-semibold text-sm md:text-base">
               <MdOutlineSubtitles className="text-lg md:text-3xl" />
               {currentMovie.subtitle}
@@ -47,7 +51,7 @@ export default function MovieDetail() {
           </section>
           <section className="flex justify-center gap-x-5 md:justify-start xl:text-lg xl:mt-5">
             <p>Cuntry: {currentMovie.country}</p>
-            <p>Status: {currentMovie.status}</p>
+            {currentMovie.status && <p>Status: {currentMovie.status}</p>}
             <p>Year: {currentMovie.year}</p>
           </section>
           <p className="flex gap-x-1 mt-5 color-white text-center md:text-left xl:text-lg">
@@ -58,15 +62,17 @@ export default function MovieDetail() {
               ))}
             </ul>
           </p>
-          <p className="color-black font-medium text-center my-5 md:text-left xl:text-lg detail-gradient md:w-fit px-4 py-1 rounded-full">
-            Season {currentMovie.season} - Episode {currentMovie.episode} -
-            added
-          </p>
+          {currentMovie.season > 0 && (
+            <p className="color-black font-medium text-center mt-5 md:text-left xl:text-lg detail-gradient md:w-fit px-4 py-1 rounded-full">
+              Season {currentMovie.season} - Episode {currentMovie.episode} -
+              added
+            </p>
+          )}
           <p className="line-clamp-3 color-white md:my-5 hidden lg:block xl:text-lg">
             {currentMovie.desc}
           </p>
         </article>
-        <p className="line-clamp-2 color-white px-5 text-center md:col-span-3 md:text-left md:my-5 lg:hidden">
+        <p className="line-clamp-2 color-white px-5 text-center md:col-span-3 md:text-left my-5 lg:hidden">
           {currentMovie.desc}
         </p>
       </div>
