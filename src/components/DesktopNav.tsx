@@ -1,6 +1,5 @@
 import { CiSearch } from "react-icons/ci";
 import { FaCaretDown } from "react-icons/fa";
-import { TbBrandNetflix } from "react-icons/tb";
 import NavDropList from "./NavDropList";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";

@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
       </article>
       <section className="py-3">
-        <h2 className="text-center font-semibold color-white">Copyright © 2024 Netflix Inc. All rights reserved.</h2>
+        <h2 className="text-center font-semibold color-white">Copyright © 2024 Filimora Inc. All rights reserved.</h2>
       </section>
     </div>
   );
