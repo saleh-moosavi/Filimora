@@ -22,9 +22,12 @@ export default function MobileNav() {
 
   return (
     <div className="w-2/3 mx-auto mb-3 fixed z-50 left-0 right-0 bottom-0">
-      <ul className="flex justify-between w-full rounded-full mybg-mobile-nav px-5 py-2 border-b-white/50 border-r-white/50 border-b-2 border-r-2">
+      <ul className="flex justify-between items-center w-full rounded-full mybg-mobile-nav px-5 py-2 border-b-white/50 border-r-white/50 border-b-2 border-r-2">
         <Link to={"/"}>
-          <TbBrandNetflix className="color-white text-2xl sm:text-4xl" />
+          <img
+            src="./Logo.png"
+            className="w-5 sm:w-7 sm:h-7 h-5 cursor-pointer"
+          />
         </Link>
         <CiSearch
           className="color-white text-2xl sm:text-4xl cursor-pointer"

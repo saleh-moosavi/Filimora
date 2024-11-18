@@ -27,10 +27,13 @@ export default function DesktopNav({
         scroll > 20 && "mybg-desktop-nav backdrop-blur-sm"
       }`}
     >
-      <div className="flex gap-x-2">
+      <div className="flex gap-x-2 items-center">
         {/* header Logo */}
         <Link to={"/"}>
-          <TbBrandNetflix className="text-white text-4xl hover:text-stone-400 cursor-pointer transition-all duration-700" />
+          <img
+            src="./Logo.png"
+            className="w-8 h-8 cursor-pointer"
+          />
         </Link>
         {/* header search bar */}
         <label className="flex">

@@ -15,6 +15,7 @@ export default function MovieDetail() {
           <img
             className="rounded-3xl w-[19rem] mx-auto lg:max-w-96 md:w-10/12 object-cover md:mx-5"
             src={currentMovie.img}
+            alt={currentMovie.title}
           />
         </article>
         <article className="col-span-2 md:flex md:flex-col md:justify-start color-white md:h-full md:ps-10">
