@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoMenuSharp } from "react-icons/io5";
-import { TbBrandNetflix } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
 import MobileSearchModal from "./MobileSearchModal";
