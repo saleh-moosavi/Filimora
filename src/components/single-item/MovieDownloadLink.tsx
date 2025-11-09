@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Accordion from "../../components/Accordion";
+import Accordion from "../Accordion";
 
 export default function MovieDownloadLink() {
   const [accordion, setAccordion] = useState<boolean[]>(Array(5).fill(false));

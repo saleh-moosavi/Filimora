@@ -1,13 +1,13 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Category from "./pages/Category";
+import DcmaPage from "./pages/DcmaPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./pages/home/Home";
-import PageNotFound from "./pages/PageNotFound";
-import MovieItem from "./pages/movieItem/MovieItem";
-import Category from "./pages/listOfCategory/Category";
-import DcmaPage from "./pages/DcmaPage";
+import MovieItem from "./pages/MovieItem";
 import PremiumPage from "./pages/PremiumPage";
+import PageNotFound from "./pages/PageNotFound";
 import QuestionsPage from "./pages/QuestionsPage";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/:id" element={<MovieItem />} />
           <Route path="/category" element={<Category />} />
           <Route path="/dcma" element={<DcmaPage />} />

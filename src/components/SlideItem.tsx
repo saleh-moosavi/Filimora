@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 
-type SlideItemType = {
+export interface SlideItemProps {
   img: string;
-  title: string;
-  desc: string;
-  rate: string;
   index: number;
-};
+  title: string;
+  rate: number | string;
+  desc: string;
+}
 
-export default function SlideItem(props: SlideItemType) {
+export default function SlideItem(props: SlideItemProps) {
   return (
     <Link to={`/${props.index}`}>
       <div className="relative rounded-lg overflow-hidden group">

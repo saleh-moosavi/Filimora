@@ -1,6 +1,6 @@
-import CategoryItem from "./CategoryItem";
-import data from "../../dataJson/movies.json";
 import { useEffect } from "react";
+import data from "../dataJson/movies.json";
+import CategoryItem from "../components/category/CategoryItem";
 
 export default function Category() {
   useEffect(() => {

@@ -6,36 +6,21 @@ import "swiper/css/pagination";
 import SlideItem from "./SlideItem";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { Anime } from "../types/apiResponse";
 
-type SliderType = {
-  sliderTitle: string;
-  data: {
-    img: string;
-    title: string;
-    desc: string;
-    rate: string;
-    translatedTitle: string;
-    channel: string;
-    subtitle: string;
-    age: string;
-    imdbRate: string;
-    time: string;
-    country: string;
-    status: string;
-    year: string;
-    genres: string[];
-    season: number;
-    episode: number;
-  }[];
-};
-
-export default function Slider(props: SliderType) {
-  const { width } = useSelector<any,any>((state) => state.stateManager);
+export default function Slider({
+  title,
+  data,
+}: {
+  title: string;
+  data: Anime[] | null;
+}) {
+  const { width } = useSelector<any, any>((state) => state.stateManager);
   return (
     <div className="mt-5">
       {/* Header of Slider */}
       <article className="flex justify-between px-5 rounded-lg color-white bg-one py-5 font-semibold">
-        <p>{props.sliderTitle}</p>
+        <p>{title}</p>
         <Link to={"/category"}>
           <p className="flex items-center gap-x-3 cursor-pointer">
             See More <IoIosArrowDroprightCircle />
@@ -53,19 +38,22 @@ export default function Slider(props: SliderType) {
           grabCursor={true}
           modules={[Pagination]}
         >
-          {props.data.map((item, index:number) => {
-            return (
-              <SwiperSlide className="cursor-pointer" key={index}>
-                <SlideItem
-                  img={item.img}
-                  index={index}
-                  title={item.title}
-                  rate={item.rate}
-                  desc={item.desc}
-                />
-              </SwiperSlide>
-            );
-          })}
+          {data !== null &&
+            data.map((anime: Anime, index: number) => {
+              return (
+                <SwiperSlide className="cursor-pointer" key={index}>
+                  <SlideItem
+                    img={
+                      anime.images?.webp?.large_image_url ?? "/placeholder.jpg"
+                    }
+                    index={index}
+                    title={anime.title_english || anime.title}
+                    rate={anime.score ?? "N/A"}
+                    desc={anime.synopsis ?? "No description available."}
+                  />
+                </SwiperSlide>
+              );
+            })}
         </Swiper>
       </section>
     </div>
