@@ -154,3 +154,10 @@ export interface pagination {
     };
   };
 }
+
+export interface IGenre {
+  mal_id: number;
+  name: string;
+  url: string;
+  count: number;
+}

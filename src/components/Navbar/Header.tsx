@@ -1,21 +1,16 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { setWidth, setScroll } from "../redux/stateSlice";
-import DesktopNav from "./DesktopNav";
+import { useEffect } from "react";
 import MobileNav from "./MobileNav";
+import DesktopNav from "./DesktopNav";
+import data from "../../dataJson/genresSubNav.json";
+import { useDispatch, useSelector } from "react-redux";
+import { setWidth, setScroll } from "../../redux/stateSlice";
 
 export default function Header() {
-  const [searchWidth, setSearchWidth] = useState("0");
   //connect to redux store
   const { width, scroll } = useSelector<any, any>(
     (state) => state.stateManager
   );
   const dispatch = useDispatch();
-
-  //handle md:search bar width
-  const handleSearchBarWidth = () => {
-    setSearchWidth(searchWidth == "0" ? "100" : "0");
-  };
 
   //handle scroll and resizing changes
   useEffect(() => {
@@ -34,14 +29,8 @@ export default function Header() {
   }, []);
 
   if (width > 768) {
-    return (
-      <DesktopNav
-        scroll={scroll}
-        searchWidth={searchWidth}
-        handleSearchBarWidth={handleSearchBarWidth}
-      />
-    );
+    return <DesktopNav headerData={data} scroll={scroll} />;
   } else {
-    return <MobileNav />;
+    return <MobileNav headerData={data} />;
   }
 }

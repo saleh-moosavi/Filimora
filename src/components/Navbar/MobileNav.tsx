@@ -1,11 +1,12 @@
 import { useState } from "react";
+import MobileMenu from "./MobileMenu";
+import { Link } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { IoMenuSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import MobileMenu from "./MobileMenu";
-import MobileSearchModal from "./MobileSearchModal";
+import { IGenre } from "../../types/apiResponse";
+import MobileSearchModal from "../MobileSearchModal";
 
-export default function MobileNav() {
+export default function MobileNav({ headerData }: { headerData: IGenre[] }) {
   const [mobileMenu, setMobileMenu] = useState<boolean>(false);
   const [mobileSearch, setMobileSearch] = useState<boolean>(false);
 
@@ -39,7 +40,7 @@ export default function MobileNav() {
       </ul>
       {mobileMenu && (
         <div className="fixed top-0 bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm">
-          <MobileMenu toggleMenu={toggleMenu} />
+          <MobileMenu headerData={headerData} toggleMenu={toggleMenu} />
         </div>
       )}
       {mobileSearch && (
