@@ -6,7 +6,8 @@ export type IPath =
   | "seasons/upcoming" //Upcoming / Not Yet Aired (Future)
   | "top/anime?page=1" //Trends
   | "recommendations/anime" //Recent Anime Recommendations
-  | "anime?filter[year]=2025&order_by=score&sort=desc&limit=20"; //Best of 2025
+  | "anime?filter[year]=2025&order_by=score&sort=desc&limit=20" //Best of 2025
+  | string; //custom
 
 export const getAllData = async (
   path: IPath

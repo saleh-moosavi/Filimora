@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-// import Slider from "../components/slider/Slider";
 import { useParams } from "react-router-dom";
+import { Anime } from "../types/apiResponse";
+import Slider from "../components/slider/Slider";
+import { getSingleAnime } from "../libs/getAllData";
 import Reviews from "../components/single-item/Reviews";
 import MovieDetail from "../components/single-item/MovieDetail";
 import MovieDownloadLink from "../components/single-item/MovieDownloadLink";
-import { getSingleAnime } from "../libs/getAllData";
-import { Anime } from "../types/apiResponse";
 
 export default function MovieItem() {
   const { id } = useParams();
   const [data, setData] = useState<Anime | null>(null);
+  const [genres, setGenres] = useState<string>("");
 
   useEffect(() => {
     window.scrollY > 1 && window.scrollTo(0, 0);
@@ -17,8 +18,10 @@ export default function MovieItem() {
       if (result?.data) {
         setData(result.data);
       }
+      const resGenres = result?.data.genres.map((g) => g.mal_id).join(",");
+      setGenres(resGenres || "");
     });
-  }, []);
+  }, [id]);
 
   return (
     <div>
@@ -30,7 +33,7 @@ export default function MovieItem() {
         </>
       )}
       <div className="px-7 md:px-12 xl:max-w-[85rem] xl:mx-auto">
-        {/* <Slider title="Related" data={data} /> */}
+        <Slider title="Related" path={`anime?genres=${genres}`} />
       </div>
     </div>
   );

@@ -13,17 +13,19 @@ function App() {
   return (
     <div className="bg-two">
       <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/:id" element={<MovieItem />} />
-          <Route path="/category" element={<Category />} />
-          <Route path="/dcma" element={<DcmaPage />} />
-          <Route path="/premium" element={<PremiumPage />} />
-          <Route path="/questions" element={<QuestionsPage />} />
-          <Route path="/*" element={<PageNotFound />} />
-        </Routes>
-        <Footer />
+        <main className="min-h-screen flex flex-col justify-between">
+          <Header />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/:id" element={<MovieItem />} />
+            <Route path="/category" element={<Category />} />
+            <Route path="/dcma" element={<DcmaPage />} />
+            <Route path="/premium" element={<PremiumPage />} />
+            <Route path="/questions" element={<QuestionsPage />} />
+            <Route path="/*" element={<PageNotFound />} />
+          </Routes>
+          <Footer />
+        </main>
       </BrowserRouter>
     </div>
   );

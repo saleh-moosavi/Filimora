@@ -14,17 +14,16 @@ export interface Anime {
     };
   };
   trailer: {
-    youtube_id: string;
-    url: string;
-    embed_url: string;
+    youtube_id: string | null;
+    url: string | null;
+    embed_url: string | null;
   };
-  approved: true;
-  titles: [
-    {
-      type: string;
-      title: string;
-    }
-  ];
+  approved: boolean;
+  titles: {
+    type: string;
+    title: string;
+  }[];
+
   title: string;
   title_english: string;
   title_japanese: string;
@@ -33,7 +32,7 @@ export interface Anime {
   source: string;
   episodes: number;
   status: string;
-  airing: true;
+  airing: boolean;
   aired: {
     from: string;
     to: string;
@@ -69,91 +68,78 @@ export interface Anime {
     timezone: string;
     string: string;
   };
-  producers: [
-    {
+  producers: {
+    mal_id: number;
+    type: string;
+    name: string;
+    url: string;
+  }[];
+
+  licensors: {
+    mal_id: number;
+    type: string;
+    name: string;
+    url: string;
+  }[];
+
+  studios: {
+    mal_id: number;
+    type: string;
+    name: string;
+    url: string;
+  }[];
+
+  genres: {
+    mal_id: number;
+    type: string;
+    name: string;
+    url: string;
+  }[];
+
+  explicit_genres: {
+    mal_id: number;
+    type: string;
+    name: string;
+    url: string;
+  }[];
+
+  themes: {
+    mal_id: number;
+    type: string;
+    name: string;
+    url: string;
+  }[];
+
+  demographics: {
+    mal_id: number;
+    type: string;
+    name: string;
+    url: string;
+  }[];
+
+  relations?: {
+    relation: string;
+    entry: {
       mal_id: number;
       type: string;
       name: string;
       url: string;
-    }
-  ];
-  licensors: [
-    {
-      mal_id: number;
-      type: string;
-      name: string;
-      url: string;
-    }
-  ];
-  studios: [
-    {
-      mal_id: number;
-      type: string;
-      name: string;
-      url: string;
-    }
-  ];
-  genres: [
-    {
-      mal_id: number;
-      type: string;
-      name: string;
-      url: string;
-    }
-  ];
-  explicit_genres: [
-    {
-      mal_id: number;
-      type: string;
-      name: string;
-      url: string;
-    }
-  ];
-  themes: [
-    {
-      mal_id: number;
-      type: string;
-      name: string;
-      url: string;
-    }
-  ];
-  demographics: [
-    {
-      mal_id: number;
-      type: string;
-      name: string;
-      url: string;
-    }
-  ];
-  relations: [
-    {
-      relation: string;
-      entry: [
-        {
-          mal_id: number;
-          type: string;
-          name: string;
-          url: string;
-        }
-      ];
-    }
-  ];
-  theme: {
+    }[];
+  }[];
+
+  theme?: {
     openings: string[];
     endings: string[];
   };
-  external: [
-    {
-      name: string;
-      url: string;
-    }
-  ];
-  streaming: [
-    {
-      name: string;
-      url: string;
-    }
-  ];
+  external?: {
+    name: string;
+    url: string;
+  }[];
+
+  streaming?: {
+    name: string;
+    url: string;
+  }[];
 }
 
 export interface pagination {

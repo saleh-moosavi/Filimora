@@ -1,48 +1,49 @@
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import data from "../../dataJson/heroSlides.json";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import HeroWrapper from "./HeroWrapper";
+import { Link } from "react-router-dom";
+import { SwiperSlide } from "swiper/react";
+import { useEffect, useState } from "react";
+import { Anime } from "../../types/apiResponse";
+import fakeData from "../../dataJson/movies.json";
+import { getAllData } from "../../libs/getAllData";
 
 export default function Hero() {
+  const [HeroData, setHeroData] = useState<Anime[]>([]);
+
+  useEffect(() => {
+    getAllData("seasons/now?limit=10").then((res) => {
+      if (res.data) {
+        setHeroData(res.data);
+      } else {
+        setHeroData(fakeData as unknown as Anime[]);
+      }
+    });
+  }, []);
+
   return (
-    <div>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        loop={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        {data.map((item, index) => {
+    <HeroWrapper>
+      {HeroData &&
+        HeroData.slice(0, 10).map((item) => {
           return (
-            <SwiperSlide key={index}>
-              <div className="w-screen h-screen relative">
+            <SwiperSlide key={item.mal_id}>
+              <div className="w-screen h-screen relative flex justify-center items-center">
                 <img
-                  className="w-full h-full object-cover -z-10"
-                  src={item.img}
+                  className="absolute w-full h-full object-cover -z-10 blur-sm"
+                  src={item.images.webp.large_image_url}
                 />
-                <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center z-20">
-                  <img src={item.subImg} className="w-72" />
-                  <button className="bg-two color-white mb-20 font-semibold px-7 py-2 rounded-lg">
-                    Let`s Watch
-                  </button>
+                <div className="w-80 z-20 text-center text-white space-y-10">
+                  <Link to={`/${item.mal_id}`}>
+                    <img
+                      src={item.images.webp.large_image_url}
+                      className="h-full mx-auto rounded-xl shadow-lg shadow-white"
+                    />
+                  </Link>
+                  <h2 className="text-xl font-bold">{item.title}</h2>
                 </div>
-                <div className="h-full w-full absolute bottom-0 z-10 bg-gradient-to-t from-black"></div>
-                <div className="h-full w-full absolute top-0 z-10 bg-gradient-to-b from-black/50 to-5%"></div>
+                <div className="h-full w-full absolute inset-0 z-10 bg-black/50"></div>
               </div>
             </SwiperSlide>
           );
         })}
-      </Swiper>
-    </div>
+    </HeroWrapper>
   );
 }
