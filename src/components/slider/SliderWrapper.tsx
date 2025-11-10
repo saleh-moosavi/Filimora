@@ -1,19 +1,18 @@
-import { IoIosArrowDroprightCircle } from "react-icons/io";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import SlideItem from "./SlideItem";
-import { useSelector } from "react-redux";
+import { ReactNode } from "react";
+import { Swiper } from "swiper/react";
 import { Link } from "react-router-dom";
-import { Anime } from "../types/apiResponse";
+import { useSelector } from "react-redux";
+import { Pagination } from "swiper/modules";
+import { IoIosArrowDroprightCircle } from "react-icons/io";
 
-export default function Slider({
+export default function SliderWrapper({
+  children,
   title,
-  data,
 }: {
+  children: ReactNode;
   title: string;
-  data: Anime[] | null;
 }) {
   const { width } = useSelector<any, any>((state) => state.stateManager);
   return (
@@ -38,22 +37,7 @@ export default function Slider({
           grabCursor={true}
           modules={[Pagination]}
         >
-          {data !== null &&
-            data.map((anime: Anime, index: number) => {
-              return (
-                <SwiperSlide className="cursor-pointer" key={index}>
-                  <SlideItem
-                    img={
-                      anime.images?.webp?.large_image_url ?? "/placeholder.jpg"
-                    }
-                    index={index}
-                    title={anime.title_english || anime.title}
-                    rate={anime.score ?? "N/A"}
-                    desc={anime.synopsis ?? "No description available."}
-                  />
-                </SwiperSlide>
-              );
-            })}
+          {children}
         </Swiper>
       </section>
     </div>

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 export interface SlideItemProps {
+  id: number;
   img: string;
-  index: number;
   title: string;
   rate: number | string;
   desc: string;
@@ -10,7 +10,7 @@ export interface SlideItemProps {
 
 export default function SlideItem(props: SlideItemProps) {
   return (
-    <Link to={`/${props.index}`}>
+    <Link to={`/${props.id}`}>
       <div className="relative rounded-lg overflow-hidden group">
         <img
           className="rounded-lg h-[20rem] md:h-80 lg:h-96 xl:h-[30rem] w-full object-cover"

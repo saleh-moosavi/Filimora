@@ -1,23 +1,25 @@
-import Slider from "../Slider";
-import { useEffect, useState } from "react";
-import { Anime } from "../../types/apiResponse";
-import { getAllData } from "../../libs/getAllData";
+import Slider from "../slider/Slider";
+import { IPath } from "../../libs/getAllData";
 
 export default function ListOfSlides() {
-  const [data, setData] = useState<Anime[] | null>(null);
-  useEffect(() => {
-    getAllData("seasons/now").then((data) => setData(data.data));
-  }, []);
+  const sliders = [
+    { title: "Bests", path: "anime" },
+    { title: "Trends", path: "top/anime" },
+    { title: "Newest", path: "seasons/now" },
+    { title: "Upcoming", path: "seasons/upcoming" },
+    { title: "Recommendations", path: "recommendations/anime" },
+  ];
 
   return (
     <div className="md:px-20 px-5">
-      <Slider title="Trends Movies" data={data} />
-      <Slider title="Trends Series" data={data} />
-      <Slider title="Best Of 2024" data={data} />
-      <Slider title="Latest Animations" data={data} />
-      <Slider title="Latest Anime" data={data} />
-      <Slider title="Best Of Korea" data={data} />
-      <Slider title="Latest Talk Show" data={data} />
+      {sliders.map((slider, index) => (
+        <Slider
+          key={index}
+          title={slider.title}
+          path={slider.path as IPath}
+          fetchDelayMs={index * 400}
+        />
+      ))}
     </div>
   );
 }
