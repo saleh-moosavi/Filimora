@@ -12,7 +12,7 @@ export default function MovieDownloadLink() {
     setAccordion(allAccordions);
   };
   return (
-    <div className="px-7 md:px-12 text-white mt-10 xl:max-w-[85rem] xl:mx-auto">
+    <div className="text-white mt-10">
       <h3 className="md:text-lg font-semibold">Download Links</h3>
       {/* an accordion */}
       <Accordion

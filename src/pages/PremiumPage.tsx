@@ -6,7 +6,7 @@ export default function PremiumPage() {
     window.scrollY > 1 && window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="color-white px-5 xl:max-w-[85rem] xl:mx-auto py-5 md:pt-24">
+    <div className="color-white">
       <div className="text-center mb-10">
         <h3 className="text-3xl font-semibold">Get full access.</h3>
         <p className="text-lg font-medium">

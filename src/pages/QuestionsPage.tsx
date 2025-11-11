@@ -5,7 +5,7 @@ export default function QuestionsPage() {
     window.scrollY > 1 && window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="color-white px-5 xl:max-w-[85rem] xl:mx-auto py-5 md:pt-32">
+    <div className="color-white">
       <article className="mb-10">
         <h2 className="color-seven font-semibold text-lg mb-3">
           I downloaded the movie but it doesn't have subtitles?

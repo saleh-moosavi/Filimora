@@ -32,9 +32,7 @@ export default function MovieItem() {
           <Reviews />
         </>
       )}
-      <div className="px-7 md:px-12 xl:max-w-[85rem] xl:mx-auto">
-        <Slider title="Related" path={`anime?genres=${genres}`} />
-      </div>
+      <Slider title="Related" path={`anime?genres=${genres}`} />
     </div>
   );
 }

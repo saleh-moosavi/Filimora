@@ -4,12 +4,10 @@ export default function DcmaPage() {
   useEffect(() => {
     window.scrollY > 1 && window.scrollTo(0, 0);
   }, []);
-  
+
   return (
-    <div className="color-white px-5 xl:max-w-[85rem] xl:mx-auto">
-      <h2 className="py-5 md:pt-32 text-xl font-semibold lg:text-3xl">
-        DMCA POLICY
-      </h2>
+    <div className="color-white">
+      <h2 className="text-xl font-semibold lg:text-3xl">DMCA POLICY</h2>
       <article className="text-justify flex flex-col gap-y-5 lg:text-lg leading-8 lg:leading-9">
         <p>
           avamovie.in, avamovie.shop is in compliance with 17 U.S.C. § ۵۱۲ and
