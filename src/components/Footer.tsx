@@ -9,7 +9,7 @@ export default function Footer() {
         <FaTelegramPlane className="hover:text-sky-400" />
         <FaInstagram className="hover:text-red-600" />
         <FaXTwitter className="hover:text-stone-400" />
-        <AiOutlineYoutube className="hover:text-rose-600 scale-125" />
+        <AiOutlineYoutube className="hover:text-rose-600 !size-8" />
       </div>
       <h2 className="text-center text-sm font-semibold color-white">
         Copyright © 2024 Filimora Inc. All rights reserved

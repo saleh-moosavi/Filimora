@@ -11,10 +11,10 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <div className="bg-two">
+    <div className="bg-two min-w-screen min-h-screen">
       <BrowserRouter>
         <Navbar />
-        <main className="min-h-[80vh] xl:max-w-[85rem] xl:mx-auto mt-10">
+        <main className="min-h-[80vh] xl:max-w-[85rem] xl:mx-auto mt-0 md:mt-10 p-5">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/:id" element={<MovieItem />} />
