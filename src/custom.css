@@ -128,19 +128,3 @@
 .bg-two-hover:hover {
   background-color: var(--col-two);
 }
-
-/* scroll bar color */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: var(--col-six);
-}
-
-::-webkit-scrollbar-track {
-  background-color: var(--col-one);
-}
-
-* {
-  scroll-behavior: smooth;
-}
