@@ -21,7 +21,7 @@ export default function Menu({
       <ul className="grid grid-cols-2 md:grid-cols-5 col-span-1 gap-2 font-bold">
         {data.map((item: IGenre) => {
           return (
-            <Link to={`/category/${item.mal_id}`} key={item.mal_id}>
+            <Link to={`/category/${item.mal_id}`} key={item.mal_id + item.name}>
               <li key={item.mal_id}>{item.name}</li>
             </Link>
           );

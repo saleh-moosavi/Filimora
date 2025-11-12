@@ -7,23 +7,21 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 export default function HeroWrapper({ children }: { children: ReactNode }) {
   return (
-    <div>
-      <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        loop={true}
-        modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
-      >
-        {children}
-      </Swiper>
-    </div>
+    <Swiper
+      spaceBetween={30}
+      centeredSlides={true}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      loop={true}
+      modules={[Autoplay, Pagination, Navigation]}
+      className="mySwiper"
+    >
+      {children}
+    </Swiper>
   );
 }

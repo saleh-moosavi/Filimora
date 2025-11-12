@@ -41,7 +41,7 @@ export default function Navbar() {
       </section>
       {/* Menu List */}
       <section
-        className={`text-white fixed top-32 md:top-0 bottom-0 md:right-1/2 w-screen md:translate-x-1/2 md:max-w-screen-xl rounded-t-xl md:rounded-xl transition-all duration-200 overflow-y-scroll overscroll-contain md:overflow-y-auto md:overscroll-auto ${
+        className={`text-white fixed top-32 md:top-0 bottom-0 md:right-1/2 w-screen md:translate-x-1/2 md:max-w-screen-xl rounded-t-xl md:rounded-xl transition-all duration-200 overflow-y-scroll overscroll-contain md:overflow-y-auto md:overscroll-auto z-50 ${
           showMenu
             ? "translate-y-0 md:top-24 opacity-100"
             : "translate-y-full md:top-full opacity-0"

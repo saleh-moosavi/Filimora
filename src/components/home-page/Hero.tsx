@@ -17,33 +17,35 @@ export default function Hero() {
         setHeroData(fakeData as unknown as Anime[]);
       }
     });
+    console.log("first")
   }, []);
 
   return (
-    <HeroWrapper>
-      {HeroData &&
-        HeroData.slice(0, 10).map((item) => {
-          return (
-            <SwiperSlide key={item.mal_id}>
-              <div className="w-screen h-screen relative flex justify-center items-center">
+    <div className="w-full h-[75vh] md:h-[85vh] flex relative rounded-xl overflow-hidden shadow-md shadow-white bg-white/20">
+      <HeroWrapper>
+        {HeroData &&
+          HeroData.slice(0, 4).map((item) => {
+            return (
+              <SwiperSlide key={item.mal_id}>
+                
                 <img
-                  className="absolute w-full h-full object-cover -z-10 blur-sm"
+                  className="absolute inset-0 w-full h-full object-cover rounded-xl blur-md -z-10 invisible md:visible"
                   src={item.images.webp.large_image_url}
                 />
-                <div className="w-80 z-20 text-center text-white space-y-10">
-                  <Link to={`/${item.mal_id}`}>
+                <div className="h-full w-full absolute inset-0 bg-gradient-to-t from-white/40 to-black/40 to-40% invisible md:visible"></div>
+                <div className="absolute inset-0 grid grid-rows-12 m-auto md:mt-8 w-64 md:w-80 text-center z-20 text-white space-y-10">
+                  <Link to={`/${item.mal_id}`} className="row-span-9">
                     <img
                       src={item.images.webp.large_image_url}
-                      className="h-full mx-auto rounded-xl shadow-lg shadow-white"
+                      className="object-cover rounded-xl shadow-lg shadow-white"
                     />
                   </Link>
-                  <h2 className="text-xl font-bold">{item.title}</h2>
+                  <h2 className="text-xl font-bold row-span-3">{item.title}</h2>
                 </div>
-                <div className="h-full w-full absolute inset-0 z-10 bg-black/50"></div>
-              </div>
-            </SwiperSlide>
-          );
-        })}
-    </HeroWrapper>
+              </SwiperSlide>
+            );
+          })}
+      </HeroWrapper>
+    </div>
   );
 }

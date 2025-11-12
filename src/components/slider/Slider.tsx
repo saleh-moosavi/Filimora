@@ -34,19 +34,20 @@ export default function Slider({
   return (
     <SliderWrapper title={title}>
       {data !== null &&
-        data.map((anime: Anime) => {
-          return (
-            <SwiperSlide className="cursor-pointer" key={anime.mal_id}>
-              <SliderContent
-                id={anime.mal_id}
-                rate={anime.score ?? "N/A"}
-                title={anime.title_english || anime.title}
-                desc={anime.synopsis ?? "No description available."}
-                img={anime.images?.webp?.large_image_url ?? "/placeholder.jpg"}
-              />
-            </SwiperSlide>
-          );
-        })}
+        data.map((anime: Anime) => (
+          <SwiperSlide
+            className="cursor-pointer"
+            key={anime.mal_id + anime.title}
+          >
+            <SliderContent
+              id={anime.mal_id}
+              rate={anime.score ?? "N/A"}
+              title={anime.title_english || anime.title}
+              desc={anime.synopsis ?? "No description available."}
+              img={anime.images?.webp?.large_image_url ?? "/placeholder.jpg"}
+            />
+          </SwiperSlide>
+        ))}
     </SliderWrapper>
   );
 }

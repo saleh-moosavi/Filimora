@@ -11,10 +11,10 @@ export default function ListOfSlides() {
   ];
 
   return (
-    <div className="md:px-20 px-5">
+    <div>
       {sliders.map((slider, index) => (
         <Slider
-          key={index}
+          key={slider.path + index}
           title={slider.title}
           path={slider.path as IPath}
           fetchDelayMs={index * 400}
