@@ -13,7 +13,7 @@ export default function SlideItem(props: SlideItemProps) {
     <Link to={`/${props.id}`}>
       <div className="relative rounded-lg overflow-hidden group">
         <img
-          className="rounded-lg h-[20rem] md:h-80 lg:h-96 xl:h-[30rem] w-full object-cover"
+          className="rounded-lg h-[24rem] w-full object-cover"
           src={props.img}
           alt={props.title}
         />
