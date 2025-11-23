@@ -2,6 +2,7 @@ import App from "./App";
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
+const Error = lazy(() => import("./pages/Error"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const Category = lazy(() => import("./pages/Category"));
 const DcmaPage = lazy(() => import("./pages/DcmaPage"));
@@ -14,7 +15,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <p>error</p>,
+    errorElement: <Error />,
     children: [
       {
         index: true,

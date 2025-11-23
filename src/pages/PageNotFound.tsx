@@ -1,17 +1,26 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function PageNotFound() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     window.scrollY > 1 && window.scrollTo(0, 0);
   }, []);
+
   return (
-    <div className="h-screen w-screen flex flex-col justify-center items-center">
-      <img
-        className="object-cover"
-        src="https://imgix.ranker.com/list_img_v2/13396/2693396/original/best-deadpool-insults"
-        alt=""
-      />
-      <p className="text-white text-2xl">PageNotFound</p>
+    <div className="h-[80vh] w-full flex flex-col gap-5 justify-center items-center">
+      <img className="object-cover h-1/2 rounded-xl" src="/404.png" alt="" />
+      <p className="text-white text-lg md:text-3xl font-bold">Page Not Found</p>
+      <p className="text-white text-center">
+        The page you’re looking for doesn’t exist or may have been moved.
+      </p>
+      <button
+        className="bg-white px-4 py-2 rounded-lg text-sm font-semibold"
+        onClick={() => navigate(-1)}
+      >
+        Back To Previous
+      </button>
     </div>
   );
 }
