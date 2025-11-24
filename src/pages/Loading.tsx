@@ -1,5 +1,7 @@
 export default function Loading() {
   return (
-    <div>Loading</div>
-  )
+    <div className="flex justify-center items-center min-h-[80vh] text-white">
+      <span className="inline-block w-8 aspect-square rounded-full border-x-4 animate-spin"></span>
+    </div>
+  );
 }

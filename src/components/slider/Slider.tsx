@@ -31,6 +31,8 @@ export default function Slider({
     return () => clearTimeout(fetchWithDelay);
   }, [path, fetchDelayMs]);
 
+  if (data === null) return null;
+
   return (
     <SliderWrapper title={title}>
       {data !== null &&

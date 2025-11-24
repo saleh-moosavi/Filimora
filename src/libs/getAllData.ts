@@ -27,7 +27,6 @@ export const getSingleAnime = async (
   data: Anime;
 } | null> => {
   if (!id) return null;
-  console.log(`https://api.jikan.moe/v4/anime/${id}/full`);
   const res = await fetch(`https://api.jikan.moe/v4/anime/${id}/full`);
   const data = await res.json();
   return data;
