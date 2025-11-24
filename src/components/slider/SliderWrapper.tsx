@@ -14,7 +14,7 @@ export default function SliderWrapper({
   title: string;
 }) {
   return (
-    <div className="mt-5">
+    <div>
       {/* Header of Slider */}
       <article className="flex justify-between px-5 rounded-lg color-white bg-one py-5 font-semibold">
         <p>{title}</p>

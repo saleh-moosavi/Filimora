@@ -20,7 +20,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="w-full h-[80vh] md:h-[85vh] flex relative rounded-xl overflow-hidden md:shadow-md md:shadow-white md:bg-white/20">
+    <div className="w-full mb-20 h-[80vh] md:h-[85vh] flex relative rounded-xl overflow-hidden md:shadow-md md:shadow-white md:bg-white/20">
       <HeroWrapper>
         {HeroData && HeroData.length > 0 ? (
           HeroData.slice(0, 5).map((item) => (
@@ -37,11 +37,10 @@ export default function Hero() {
                     src={item.images.webp.large_image_url}
                     className="object-cover rounded-xl shadow-lg shadow-white"
                     alt={item.title}
+                    loading="eager"
                   />
                 </Link>
-                <h2 className="text-xl font-bold row-span-3">
-                  {item.title}
-                </h2>
+                <h2 className="text-xl font-bold row-span-3">{item.title}</h2>
               </div>
             </SwiperSlide>
           ))

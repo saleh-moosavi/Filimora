@@ -1,5 +1,7 @@
+import Observer from "../Observer";
 import Slider from "../slider/Slider";
 import { IPath } from "../../libs/getAllData";
+import SliderSkeleton from "../slider/SliderSkeleton";
 
 export default function ListOfSlides() {
   const sliders = [
@@ -7,18 +9,18 @@ export default function ListOfSlides() {
     { title: "Trends", path: "top/anime" },
     { title: "Newest", path: "seasons/now" },
     { title: "Upcoming", path: "seasons/upcoming" },
-    { title: "Recommendations", path: "recommendations/anime" },
   ];
 
   return (
     <div>
       {sliders.map((slider, index) => (
-        <Slider
-          key={slider.path + index}
-          title={slider.title}
-          path={slider.path as IPath}
-          fetchDelayMs={index * 400}
-        />
+        <Observer key={slider.path + index} skeleton={<SliderSkeleton />}>
+          <Slider
+            title={slider.title}
+            path={slider.path as IPath}
+            fetchDelayMs={index * 400}
+          />
+        </Observer>
       ))}
     </div>
   );

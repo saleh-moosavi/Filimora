@@ -3,11 +3,11 @@ import { Anime } from "../../types/apiResponse";
 
 export default function MovieDetail({ data }: { data: Anime }) {
   return (
-    <div className="grid items-center content-start md:grid-cols-2 max-w-7xl mx-auto min-h-[80vh]">
+    <div className="grid items-center content-start md:grid-cols-2 min-h-[80vh]">
       {/* Image Section */}
       <article className="self-start col-span-1">
         <img
-          className="rounded-3xl w-[19rem] md:w-10/12 md:max-w-80 mx-auto md:mx-5 object-cover"
+          className="rounded-3xl w-[19rem] md:w-10/12 md:max-w-80 mx-auto md:mx-0 object-cover"
           src={data.images?.webp?.large_image_url}
           alt={data.title_english || data.title}
         />
@@ -53,7 +53,7 @@ export default function MovieDetail({ data }: { data: Anime }) {
           {data.synopsis}
         </p>
       </article>
-      <p className="text-sm font-semibold text-justify text-white md:col-span-2 mt-5 hidden  md:block">
+      <p className="text-sm font-semibold text-justify text-white md:col-span-2 mt-5 hidden md:block">
         {data.synopsis}
       </p>
     </div>

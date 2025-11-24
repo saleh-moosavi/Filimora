@@ -4,7 +4,7 @@ import ListOfSlides from "../components/home-page/ListOfSlides";
 
 export default function HomePage() {
   useEffect(() => {
-    window.scrollY > 1 && window.scrollTo(0, 0);
+    window.scrollY > 0 && window.scrollTo({ top: 0, behavior: "smooth" });
     document.documentElement.classList.remove("overflow-hidden");
   }, []);
   return (
