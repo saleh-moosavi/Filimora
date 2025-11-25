@@ -35,7 +35,7 @@ export default function Slider({
   if (data === null) return <SliderSkeleton />;
 
   return (
-    <SliderWrapper title={title}>
+    <SliderWrapper title={title} path={path}>
       {data.map((anime: Anime) => (
         <SwiperSlide
           className="cursor-pointer"

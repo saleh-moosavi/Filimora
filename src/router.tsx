@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
         element: <MovieItem />,
       },
       {
-        path: "category/:id",
+        path: "category/:id?",
         element: <Category />,
       },
       {

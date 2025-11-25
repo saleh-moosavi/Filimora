@@ -1,20 +1,31 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { Anime } from "../types/apiResponse";
 import { getAllData } from "../libs/getAllData";
+import { useParams, useSearchParams } from "react-router-dom";
 import CategoryItem from "../components/category/CategoryItem";
 
 export default function Category() {
   const { id } = useParams();
+  const [searchParams] = useSearchParams();
   const [data, setData] = useState<Anime[]>([]);
+
+  const linkParam = searchParams.get("link") || null;
 
   useEffect(() => {
     window.scrollY > 1 && window.scrollTo(0, 0);
-    getAllData("anime?genres=" + id).then((result) => {
-      if (result?.data) {
-        setData(result.data);
-      }
-    });
+    if (linkParam !== null) {
+      getAllData(linkParam).then((result) => {
+        if (result?.data) {
+          setData(result.data);
+        }
+      });
+    } else {
+      getAllData("anime?genres=" + id).then((result) => {
+        if (result?.data) {
+          setData(result.data);
+        }
+      });
+    }
   }, [id]);
 
   return (

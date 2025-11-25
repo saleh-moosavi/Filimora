@@ -6,6 +6,9 @@ import { getSingleAnime } from "../libs/getAllData";
 import Reviews from "../components/single-item/Reviews";
 import MovieDetail from "../components/single-item/MovieDetail";
 import MovieDownloadLink from "../components/single-item/MovieDownloadLink";
+import MovieDetailSkeleton from "../components/single-item/MovieDetailSkeleton";
+import Observer from "../components/Observer";
+import SliderSkeleton from "../components/slider/SliderSkeleton";
 
 export default function MovieItem() {
   const { id } = useParams();
@@ -24,15 +27,15 @@ export default function MovieItem() {
   }, [id]);
 
   return (
-    <div>
-      {data && (
-        <>
-          <MovieDetail data={data} />
-          <MovieDownloadLink />
-          <Reviews />
-        </>
-      )}
-      <Slider title="Related" path={`anime?genres=${genres}`} />
+    <div className="space-y-10">
+      <>
+        {data ? <MovieDetail data={data} /> : <MovieDetailSkeleton />}
+        <MovieDownloadLink />
+        <Reviews />
+      </>
+      <Observer skeleton={<SliderSkeleton />}>
+        <Slider title="Related" path={`anime?genres=${genres}`} />
+      </Observer>
     </div>
   );
 }

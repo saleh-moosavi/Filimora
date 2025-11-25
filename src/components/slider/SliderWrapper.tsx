@@ -4,12 +4,15 @@ import { ReactNode } from "react";
 import { Swiper } from "swiper/react";
 import { Link } from "react-router-dom";
 import { Pagination } from "swiper/modules";
+import { IPath } from "../../libs/getAllData";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 
 export default function SliderWrapper({
   children,
   title,
+  path,
 }: {
+  path: IPath;
   children: ReactNode;
   title: string;
 }) {
@@ -18,7 +21,7 @@ export default function SliderWrapper({
       {/* Header of Slider */}
       <article className="flex justify-between px-5 rounded-lg color-white bg-one py-5 font-semibold">
         <p>{title}</p>
-        <Link to={"/category"}>
+        <Link to={`/category?link=${path}`}>
           <p className="flex items-center gap-x-3 cursor-pointer">
             See More <IoIosArrowDroprightCircle />
           </p>
