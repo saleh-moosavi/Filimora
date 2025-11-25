@@ -31,3 +31,9 @@ export const getSingleAnime = async (
   const data = await res.json();
   return data;
 };
+
+export const getAnimeReviews = async (id: string) => {
+  const res = await fetch(`https://api.jikan.moe/v4/anime/${id}/reviews`);
+  const data = await res.json();
+  return data;
+};
