@@ -34,7 +34,7 @@ export default function MovieDetail({ data }: { data: Anime }) {
           )}
           <p className="flex gap-x-1 color-white text-center flex-wrap">
             {data.genres?.map((genre, index) => (
-              <span key={genre.mal_id}>
+              <span key={`anime-item-genre-${genre.mal_id}`}>
                 {index !== 0 && ", "}
                 {genre.name}
               </span>

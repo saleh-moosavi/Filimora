@@ -1,42 +1,30 @@
 import { SwiperSlide } from "swiper/react";
 import SliderContent from "./SliderContent";
 import SliderWrapper from "./SliderWrapper";
-import { useEffect, useState } from "react";
 import SliderSkeleton from "./SliderSkeleton";
 import { Anime } from "../../types/apiResponse";
+import { ISlider } from "../../types/PropTypes";
+import { useQuery } from "@tanstack/react-query";
 import fakeData from "../../dataJson/movies.json";
-import { getAllData, IPath } from "../../libs/getAllData";
+import { getAllData } from "../../libs/getAllData";
 
-export default function Slider({
-  title,
-  path,
-  fetchDelayMs = 0,
-}: {
-  title: string;
-  path: IPath;
-  fetchDelayMs?: number;
-}) {
-  const [data, setData] = useState<Anime[] | null>(null);
+export default function Slider({ title, path, fetchDelayMs = 0 }: ISlider) {
+  const { data, isLoading } = useQuery({
+    queryKey: ["anime", path],
+    queryFn: async () => {
+      await new Promise((resolve) => setTimeout(resolve, fetchDelayMs));
+      const response = await getAllData(path);
+      return response.data || (fakeData as unknown as Anime[]);
+    },
+    retry: 2,
+    staleTime: 5 * 60 * 1000,
+  });
 
-  useEffect(() => {
-    const fetchWithDelay = setTimeout(() => {
-      getAllData(path).then((data) => {
-        if (data.data) {
-          setData(data.data);
-        } else {
-          setData(fakeData as unknown as Anime[]);
-        }
-      });
-    }, fetchDelayMs);
-
-    return () => clearTimeout(fetchWithDelay);
-  }, [path, fetchDelayMs]);
-
-  if (data === null) return <SliderSkeleton />;
+  if (isLoading) return <SliderSkeleton />;
 
   return (
     <SliderWrapper title={title} path={path}>
-      {data.map((anime: Anime) => (
+      {data?.map((anime: Anime) => (
         <SwiperSlide
           className="cursor-pointer"
           key={anime.mal_id + anime.title}

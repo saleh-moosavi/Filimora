@@ -26,7 +26,7 @@ export default function Reviews({ data }: { data: IReview[] }) {
       {/* Comment section */}
       {data.slice(0, reviewCount).map((review) => {
         return (
-          <article key={review.mal_id} className="mt-5">
+          <article key={`review-item-${review.mal_id}`} className="mt-5">
             <div className="bg-three p-5 rounded-lg">
               <section className="flex flex-col md:flex-row gap-5 md:items-center md:justify-between">
                 <div className="flex gap-x-5 items-center">
@@ -49,7 +49,9 @@ export default function Reviews({ data }: { data: IReview[] }) {
                     <BiLike className="size-4" />
                     <p>{review.reactions.nice}</p>
                   </button>
-                  <p className="bg-gray-600 rounded-e-lg">{review.score} / 10</p>
+                  <p className="bg-gray-600 rounded-e-lg">
+                    {review.score} / 10
+                  </p>
                 </div>
               </section>
               <section className="mt-5">

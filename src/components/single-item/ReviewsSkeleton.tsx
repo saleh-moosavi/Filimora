@@ -7,9 +7,9 @@ export default function ReviewsSkeleton() {
         <h3 className="bg-white h-5 w-20 rounded"></h3>
       </div>
       {/* Comment section */}
-      {[...Array(5)].map((item) => {
+      {[...Array(5)].map((_, index) => {
         return (
-          <article key={item} className="mt-5">
+          <article key={`review-skeleton-${index}`} className="mt-5">
             <div className="bg-white/50 p-5 rounded-lg">
               <section className="flex gap-x-5 items-center justify-between">
                 <div className="flex gap-5 items-center">

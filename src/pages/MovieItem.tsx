@@ -29,7 +29,6 @@ export default function MovieItem() {
     });
 
     getAnimeReviews(id).then((result) => {
-      console.log(result);
       if (result?.data) {
         setReviews(result.data);
       }

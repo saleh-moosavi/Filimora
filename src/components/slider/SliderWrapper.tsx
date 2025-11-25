@@ -1,21 +1,16 @@
 import "swiper/css";
 import "swiper/css/pagination";
-import { ReactNode } from "react";
 import { Swiper } from "swiper/react";
 import { Link } from "react-router-dom";
 import { Pagination } from "swiper/modules";
-import { IPath } from "../../libs/getAllData";
+import { ISliderWrapper } from "../../types/PropTypes";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 
 export default function SliderWrapper({
   children,
   title,
   path,
-}: {
-  path: IPath;
-  children: ReactNode;
-  title: string;
-}) {
+}: ISliderWrapper) {
   return (
     <div>
       {/* Header of Slider */}

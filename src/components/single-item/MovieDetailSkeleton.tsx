@@ -17,14 +17,20 @@ export default function MovieDetailSkeleton() {
         {/* Details */}
         <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
           {[...Array(8)].map((_, index) => (
-            <div key={index} className="h-6 max-w-52 bg-gray-300 rounded"></div>
+            <div
+              key={`movie-detail-skeleton-details-${index}`}
+              className="h-6 max-w-52 bg-gray-300 rounded"
+            ></div>
           ))}
         </div>
 
         {/* Synopsis (Mobile) */}
         <div className="md:hidden space-y-2">
           {[...Array(4)].map((_, index) => (
-            <div key={index} className="h-4 bg-gray-300 rounded"></div>
+            <div
+              key={`movie-detail-skeleton-synopsis-mobile-${index}`}
+              className="h-4 bg-gray-300 rounded"
+            ></div>
           ))}
         </div>
       </div>
@@ -32,7 +38,10 @@ export default function MovieDetailSkeleton() {
       {/* Synopsis (Desktop) */}
       <div className="md:col-span-2 hidden md:block space-y-2 mt-6">
         {[...Array(5)].map((_, index) => (
-          <div key={index} className="h-4 bg-gray-300 rounded"></div>
+          <div
+            key={`movie-detail-skeleton-synopsis-desktop-${index}`}
+            className="h-4 bg-gray-300 rounded"
+          ></div>
         ))}
       </div>
     </div>
