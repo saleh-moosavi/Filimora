@@ -20,3 +20,10 @@ export interface ISliderWrapper {
   title: string;
   children: ReactNode;
 }
+
+export interface IObserverProps {
+  children: ReactNode;
+  skeleton: ReactNode;
+  rootMargin?: string;
+  threshold?: number;
+}

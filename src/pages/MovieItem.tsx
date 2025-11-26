@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Observer from "../components/Observer";
 import Slider from "../components/slider/Slider";
+import { useQuery } from "@tanstack/react-query";
 import { Anime, IReview } from "../types/apiResponse";
 import Reviews from "../components/single-item/Reviews";
 import MovieDetail from "../components/single-item/MovieDetail";
@@ -12,34 +13,49 @@ import MovieDetailSkeleton from "../components/single-item/MovieDetailSkeleton";
 
 export default function MovieItem() {
   const { id } = useParams();
+  if (id === undefined) return;
   const [genres, setGenres] = useState<string>("");
-  const [data, setData] = useState<Anime | null>(null);
-  const [reviews, setReviews] = useState<IReview[]>([]);
+
+  const { data, isLoading } = useQuery({
+    queryKey: [`anime-item-${id}`],
+    queryFn: async (): Promise<Anime> => {
+      const result = await getSingleAnime(id);
+      const resGenres = result?.genres.map((g) => g.mal_id).join(",");
+      setGenres(resGenres || "");
+      return result;
+    },
+  });
+  const { data: reviewData, isLoading: reviewIsLoading } = useQuery({
+    queryKey: [`review-anime-item-${id}`],
+    queryFn: async (): Promise<IReview[]> => {
+      const result = await getAnimeReviews(id);
+      return result;
+    },
+  });
 
   useEffect(() => {
     window.scrollY > 1 && window.scrollTo(0, 0);
     if (id === undefined) return;
-
-    getSingleAnime(id).then((result) => {
-      if (result?.data) {
-        setData(result.data);
-      }
-      const resGenres = result?.data.genres.map((g) => g.mal_id).join(",");
-      setGenres(resGenres || "");
-    });
-
-    getAnimeReviews(id).then((result) => {
-      if (result?.data) {
-        setReviews(result.data);
-      }
-    });
   }, [id]);
 
   return (
     <div className="space-y-10">
       <>
-        {data ? <MovieDetail data={data} /> : <MovieDetailSkeleton />}
-        {reviews.length > 0 ? <Reviews data={reviews} /> : <ReviewsSkeleton />}
+        {isLoading ? (
+          <MovieDetailSkeleton />
+        ) : data ? (
+          <MovieDetail data={data} />
+        ) : (
+          <div>Error loading movie details</div>
+        )}
+
+        {reviewIsLoading ? (
+          <ReviewsSkeleton />
+        ) : reviewData ? (
+          <Reviews data={reviewData} />
+        ) : (
+          <div>Error loading reviews</div>
+        )}
       </>
       <Observer skeleton={<SliderSkeleton />}>
         <Slider title="Related" path={`anime?genres=${genres}`} />

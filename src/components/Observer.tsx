@@ -1,19 +1,12 @@
-// components/Observer.tsx
-import { ReactNode, useEffect, useRef, useState, useCallback } from "react";
-
-interface ObserverProps {
-  children: ReactNode;
-  skeleton: ReactNode;
-  rootMargin?: string;
-  threshold?: number;
-}
+import { IObserverProps } from "../types/PropTypes";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 export default function Observer({
   children,
   skeleton,
   rootMargin = "50px",
   threshold = 0.1,
-}: ObserverProps) {
+}: IObserverProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
