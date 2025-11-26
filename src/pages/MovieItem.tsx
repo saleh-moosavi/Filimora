@@ -1,36 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Observer from "../components/Observer";
+import useGetAnime from "../hooks/useGetAnime";
 import Slider from "../components/slider/Slider";
-import { useQuery } from "@tanstack/react-query";
-import { Anime, IReview } from "../types/apiResponse";
 import Reviews from "../components/single-item/Reviews";
 import MovieDetail from "../components/single-item/MovieDetail";
 import SliderSkeleton from "../components/slider/SliderSkeleton";
-import { getAnimeReviews, getSingleAnime } from "../libs/getAllData";
 import ReviewsSkeleton from "../components/single-item/ReviewsSkeleton";
 import MovieDetailSkeleton from "../components/single-item/MovieDetailSkeleton";
 
 export default function MovieItem() {
   const { id } = useParams();
   if (id === undefined) return;
-  const [genres, setGenres] = useState<string>("");
-
-  const { data, isLoading } = useQuery({
-    queryKey: [`anime-item-${id}`],
-    queryFn: async (): Promise<Anime> => {
-      const result = await getSingleAnime(id);
-      const resGenres = result?.genres.map((g) => g.mal_id).join(",");
-      setGenres(resGenres || "");
-      return result;
-    },
-  });
-  const { data: reviewData, isLoading: reviewIsLoading } = useQuery({
-    queryKey: [`review-anime-item-${id}`],
-    queryFn: async (): Promise<IReview[]> => {
-      const result = await getAnimeReviews(id);
-      return result;
-    },
+  const { data, isLoading, reviewData, reviewIsLoading, genres } = useGetAnime({
+    id,
   });
 
   useEffect(() => {

@@ -1,21 +1,10 @@
 import HeroWrapper from "./HeroWrapper";
 import { Link } from "react-router-dom";
 import { SwiperSlide } from "swiper/react";
-import { Anime } from "../../types/apiResponse";
-import { useQuery } from "@tanstack/react-query";
-import fakeData from "../../dataJson/movies.json";
-import { getAllData } from "../../libs/getAllData";
+import useHeroData from "../../hooks/useHeroData";
 
 export default function Hero() {
-  const { data, isLoading } = useQuery({
-    queryKey: ["hero-data"],
-    queryFn: async () => {
-      const response = await getAllData("seasons/now?limit=8");
-      return response.data || (fakeData as unknown as Anime[]);
-    },
-    retry: 2,
-    staleTime: 5 * 60 * 1000,
-  });
+  const { data, isLoading } = useHeroData();
 
   return (
     <div className="w-full mb-20 h-[80vh] md:h-[85vh] flex relative rounded-xl overflow-hidden md:shadow-md md:shadow-white md:bg-white/20">

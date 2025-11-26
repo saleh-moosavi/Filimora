@@ -4,21 +4,10 @@ import SliderWrapper from "./SliderWrapper";
 import SliderSkeleton from "./SliderSkeleton";
 import { Anime } from "../../types/apiResponse";
 import { ISlider } from "../../types/PropTypes";
-import { useQuery } from "@tanstack/react-query";
-import fakeData from "../../dataJson/movies.json";
-import { getAllData } from "../../libs/getAllData";
+import useGetAllAnime from "../../hooks/useGetAllAnime";
 
 export default function Slider({ title, path, fetchDelayMs = 0 }: ISlider) {
-  const { data, isLoading } = useQuery({
-    queryKey: ["anime", path],
-    queryFn: async () => {
-      await new Promise((resolve) => setTimeout(resolve, fetchDelayMs));
-      const response = await getAllData(path);
-      return response.data || (fakeData as unknown as Anime[]);
-    },
-    retry: 2,
-    staleTime: 5 * 60 * 1000,
-  });
+  const { data, isLoading } = useGetAllAnime({ path, delay: fetchDelayMs });
 
   if (isLoading) return <SliderSkeleton />;
 
