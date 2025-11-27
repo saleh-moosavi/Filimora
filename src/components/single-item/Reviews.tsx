@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { BiLike } from "react-icons/bi";
+import ReviewButton from "./ReviewButton";
 import { IReview } from "../../types/apiResponse";
 
 export default function Reviews({ data }: { data: IReview[] }) {
@@ -63,24 +64,18 @@ export default function Reviews({ data }: { data: IReview[] }) {
           </article>
         );
       })}
-      {data.length > reviewCount ? (
-        <div className="w-full flex justify-center">
-          <button
-            className="my-2 text-white bg-blue-500 px-8 py-2 rounded-lg"
-            onClick={handleShowMoreReview}
-          >
-            Show More
-          </button>
-        </div>
+      {data.length > 0 ? (
+        <ReviewButton
+          dataLength={data.length}
+          reviewCount={reviewCount}
+          showLess={handleShowLessReview}
+          showMore={handleShowMoreReview}
+        />
       ) : (
-        <div className="w-full flex justify-center">
-          <button
-            className="my-2 text-white bg-orange-500 px-8 py-2 rounded-lg"
-            onClick={handleShowLessReview}
-          >
-            Show Less
-          </button>
-        </div>
+        <p className="text-center text-white font-semibold mt-5">
+          There Is No Comment Here , Be The First One Who Leaves a Comment For
+          This Anime
+        </p>
       )}
     </div>
   );
