@@ -1,10 +1,4 @@
-import { useEffect } from "react";
-
 export default function DcmaPage() {
-  useEffect(() => {
-    window.scrollY > 1 && window.scrollTo(0, 0);
-  }, []);
-
   return (
     <div className="color-white">
       <h2 className="text-xl font-semibold lg:text-3xl">DMCA POLICY</h2>

@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Observer from "../components/Observer";
 import useGetAnime from "../hooks/useGetAnime";
@@ -15,11 +14,6 @@ export default function MovieItem() {
   const { data, isLoading, reviewData, reviewIsLoading, genres } = useGetAnime({
     id,
   });
-
-  useEffect(() => {
-    window.scrollY > 1 && window.scrollTo(0, 0);
-    if (id === undefined) return;
-  }, [id]);
 
   return (
     <div className="space-y-10">

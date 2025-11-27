@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Anime } from "../types/apiResponse";
 import { getAllData } from "../libs/getAllData";
 import { useQuery } from "@tanstack/react-query";
@@ -19,10 +18,6 @@ export default function Category() {
     },
     enabled: !!id || !!linkParam,
   });
-
-  useEffect(() => {
-    window.scrollY > 1 && window.scrollTo(0, 0);
-  }, [id]);
 
   if (isLoading) return <p>Loadnig</p>;
   return (

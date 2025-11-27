@@ -1,10 +1,6 @@
-import { useEffect } from "react";
 import { TiTick } from "react-icons/ti";
 
 export default function PremiumPage() {
-  useEffect(() => {
-    window.scrollY > 1 && window.scrollTo(0, 0);
-  }, []);
   return (
     <div className="color-white">
       <div className="text-center mb-10">

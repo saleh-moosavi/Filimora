@@ -1,12 +1,7 @@
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function PageNotFound() {
   const navigate = useNavigate();
-
-  useEffect(() => {
-    window.scrollY > 1 && window.scrollTo(0, 0);
-  }, []);
 
   return (
     <div className="h-[80vh] w-full flex flex-col gap-5 justify-center items-center">
