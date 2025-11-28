@@ -32,7 +32,7 @@ export default function Reviews({ data }: { data: IReview[] }) {
               <section className="flex flex-col md:flex-row gap-5 md:items-center md:justify-between">
                 <div className="flex gap-x-5 items-center">
                   <img
-                    className="w-14 aspect-square object-cover rounded-lg"
+                    className="w-14 aspect-square object-cover rounded-lg bg-white/50"
                     src={review.user.images.webp.image_url}
                   />
                   <div>
