@@ -1,6 +1,7 @@
 import useCategoryData from "../hooks/useCategoryData";
 import { useParams, useSearchParams } from "react-router-dom";
 import CategoryItem from "../components/category/CategoryItem";
+import CategorySkeleton from "../components/category/CategorySkeleton";
 
 export default function Category() {
   const { id } = useParams();
@@ -9,7 +10,7 @@ export default function Category() {
 
   const { data, isLoading } = useCategoryData({ id, linkParam });
 
-  if (isLoading) return <p>Loadnig</p>;
+  if (isLoading) return <CategorySkeleton />;
 
   return (
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">

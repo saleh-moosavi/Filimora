@@ -30,7 +30,7 @@ export default function SliderWrapper({
           grabCursor={true}
           modules={[Pagination]}
           breakpoints={{
-            550: {
+            640: {
               slidesPerView: 2.25,
               spaceBetween: 30,
             },
@@ -38,7 +38,7 @@ export default function SliderWrapper({
               slidesPerView: 3.25,
               spaceBetween: 30,
             },
-            1375: {
+            1280: {
               slidesPerView: 4.5,
               spaceBetween: 30,
             },
