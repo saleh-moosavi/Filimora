@@ -1,6 +1,6 @@
 import Observer from "../Observer";
 import Slider from "../slider/Slider";
-import { IPath } from "../../libs/getAllData";
+import { IPath } from "../../types/PropTypes";
 import SliderSkeleton from "../slider/SliderSkeleton";
 
 export default function ListOfSlides() {

@@ -1,13 +1,5 @@
+import { IPath } from "../types/PropTypes";
 import { Anime, IReview, pagination } from "../types/apiResponse";
-
-export type IPath =
-  | "seasons/now" //Currently Airing This Season
-  | "season/later" //Latest Anime
-  | "seasons/upcoming" //Upcoming / Not Yet Aired (Future)
-  | "top/anime?page=1" //Trends
-  | "recommendations/anime" //Recent Anime Recommendations
-  | "anime?filter[year]=2025&order_by=score&sort=desc&limit=20" //Best of 2025
-  | string; //custom
 
 export const getAllData = async (
   path: IPath

@@ -17,11 +17,11 @@ export default function Hero() {
             </div>
           </SwiperSlide>
         ) : (
-          data?.map((item) => (
+          data?.map((item, index) => (
             <SwiperSlide key={item.mal_id}>
               <img
                 className="absolute inset-0 w-full h-full object-cover rounded-xl blur-md -z-10 invisible md:visible"
-                src={item.images.webp.large_image_url}
+                src={item.images.webp.small_image_url}
                 alt={item.title}
               />
               <div className="h-full w-full absolute inset-0 bg-black/30 invisible md:visible"></div>
@@ -31,7 +31,7 @@ export default function Hero() {
                     src={item.images.webp.large_image_url}
                     className="object-cover rounded-xl shadow-lg shadow-white"
                     alt={item.title}
-                    loading="eager"
+                    loading={index < 2 ? "eager" : "lazy"}
                   />
                 </Link>
                 <h2 className="text-xl font-bold row-span-3">{item.title}</h2>
