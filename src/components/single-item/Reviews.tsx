@@ -18,9 +18,9 @@ export default function Reviews({ data }: { data: IReview[] }) {
   return (
     <div>
       {/* Title */}
-      <div className="flex justify-between bg-one p-5 rounded-lg">
-        <h3 className="color-white md:text-lg font-semibold">Comments</h3>
-        <h3 className="color-white md:text-lg font-semibold cursor-pointer">
+      <div className="flex justify-between bg-my-black-med p-5 rounded-lg">
+        <h3 className="text-my-white-max md:text-lg font-semibold">Comments</h3>
+        <h3 className="text-my-white-max md:text-lg font-semibold cursor-pointer">
           Add +
         </h3>
       </div>
@@ -28,35 +28,35 @@ export default function Reviews({ data }: { data: IReview[] }) {
       {data.slice(0, reviewCount).map((review) => {
         return (
           <article key={`review-item-${review.mal_id}`} className="mt-5">
-            <div className="bg-three p-5 rounded-lg">
+            <div className="bg-my-black-med p-5 rounded-lg">
               <section className="flex flex-col md:flex-row gap-5 md:items-center md:justify-between">
                 <div className="flex gap-x-5 items-center">
                   <img
-                    className="w-14 aspect-square object-cover rounded-lg bg-white/50"
+                    className="w-14 aspect-square object-cover rounded-lg bg-my-white-min"
                     src={review.user.images.webp.image_url}
                   />
                   <div>
-                    <p className="color-white font-semibold">
+                    <p className="text-my-white-max font-semibold">
                       {review.user.username}
                     </p>
-                    <p className="color-white font-semibold">
+                    <p className="text-my-white-max font-semibold">
                       {review.date.split("T")[0]}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-center justify-center *:font-bold *:text-center text-white *:px-4 *:py-2 text-xs">
-                  <button className="flex items-center justify-center gap-2 bg-gray-800 rounded-s-lg">
+                <div className="flex items-center justify-center *:font-bold *:text-center text-my-white-max *:px-4 *:py-2 text-xs">
+                  <button className="flex items-center justify-center gap-2 bg-my-green-max rounded-s-lg">
                     <BiLike className="size-4" />
                     <p>{review.reactions.nice}</p>
                   </button>
-                  <p className="bg-gray-600 rounded-e-lg">
+                  <p className="bg-my-green-med rounded-e-lg">
                     {review.score} / 10
                   </p>
                 </div>
               </section>
               <section className="mt-5">
-                <p className="color-white text-justify text-sm font-semibold md:text-base md:font-normal">
+                <p className="text-my-white-max text-justify text-sm font-semibold md:text-base md:font-normal">
                   {review.review.substring(0, 500)}
                 </p>
               </section>

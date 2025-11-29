@@ -1,6 +1,6 @@
 export default function DcmaPage() {
   return (
-    <div className="color-white">
+    <div className="text-my-white-max">
       <h2 className="text-xl font-semibold lg:text-3xl">DMCA POLICY</h2>
       <article className="text-justify flex flex-col gap-y-5 lg:text-lg leading-8 lg:leading-9">
         <p>

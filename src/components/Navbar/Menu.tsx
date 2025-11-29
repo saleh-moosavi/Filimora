@@ -10,13 +10,13 @@ export default function Menu({
   return (
     <article
       onMouseLeave={() => handleMenuMouseOver(false)}
-      className="bg-black md:mx-5 p-5 pt-0 md:pt-5 md:rounded-xl overflow-y-scroll overscroll-contain md:overflow-y-auto md:overscroll-auto max-h-[80vh] md:max-h-[70vh]"
+      className="bg-my-black-med md:mx-5 p-5 pt-0 md:pt-5 md:rounded-xl overflow-y-scroll overscroll-contain md:overflow-y-auto md:overscroll-auto max-h-[80vh] md:max-h-[70vh]"
     >
       <div
-        className="sticky top-0 w-full pb-10 bg-black md:hidden"
+        className="sticky top-0 w-full pb-10 bg-my-black-med md:hidden"
         onClick={() => handleMenuMouseOver(false)}
       >
-        <span className="block w-1/2 bg-white rounded-b-md h-2 mx-auto"></span>
+        <span className="block w-1/2 bg-my-white-max rounded-b-md h-2 mx-auto"></span>
       </div>
       <ul className="grid grid-cols-2 md:grid-cols-4 col-span-1 gap-2 font-bold">
         {data.map((item: IGenre) => {

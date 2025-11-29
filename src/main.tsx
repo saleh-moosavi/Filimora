@@ -1,5 +1,4 @@
 import "./index.css";
-import "./custom.css";
 import store from "./redux/store";
 import { StrictMode } from "react";
 import { router } from "./router.tsx";

@@ -12,7 +12,7 @@ function App() {
   useScroll();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="bg-two min-w-screen min-h-screen">
+      <div className="bg-my-black-max min-w-screen min-h-screen">
         <Navbar />
         <main className="min-h-[80vh] xl:max-w-[85rem] xl:mx-auto p-5">
           <Suspense fallback={<Loading />}>

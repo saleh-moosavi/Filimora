@@ -4,8 +4,8 @@ export default function CategorySkeleton() {
       {[...Array(8)].map((_, index) => (
         <article key={index}>
           <div className="space-y-2 animate-pulse">
-            <div className="rounded-xl w-full h-[30rem] md:h-80 lg:h-96 xl:h-[30rem] bg-gray-300"></div>
-            <div className="h-8 bg-gray-300 rounded-md w-full mx-auto mt-5 md:mx-0 md:mt-0"></div>
+            <div className="rounded-xl w-full h-[30rem] md:h-80 lg:h-96 xl:h-[30rem] bg-my-black-min"></div>
+            <div className="h-8 bg-my-black-min rounded-md w-full mx-auto mt-5 md:mx-0 md:mt-0"></div>
           </div>
         </article>
       ))}

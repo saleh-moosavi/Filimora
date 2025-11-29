@@ -14,7 +14,7 @@ export default function SliderWrapper({
   return (
     <div>
       {/* Header of Slider */}
-      <article className="flex justify-between px-5 rounded-lg color-white bg-one py-5 font-semibold">
+      <article className="flex justify-between px-5 rounded-lg text-my-white-max bg-my-black-med py-5 font-semibold">
         <p>{title}</p>
         <Link to={`/category?link=${path}`}>
           <p className="flex items-center gap-x-3 cursor-pointer">

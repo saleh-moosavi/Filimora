@@ -14,7 +14,7 @@ export default function ReviewButton({
       {dataLength > reviewCount ? (
         <div className="w-full flex justify-center">
           <button
-            className="my-2 text-white bg-blue-500 px-8 py-2 rounded-lg"
+            className="my-2 text-my-white-max bg-blue-500 px-8 py-2 rounded-lg"
             onClick={showMore}
           >
             Show More
@@ -23,7 +23,7 @@ export default function ReviewButton({
       ) : (
         <div className="w-full flex justify-center">
           <button
-            className="my-2 text-white bg-orange-500 px-8 py-2 rounded-lg"
+            className="my-2 text-my-white-max bg-orange-500 px-8 py-2 rounded-lg"
             onClick={showLess}
           >
             Show Less

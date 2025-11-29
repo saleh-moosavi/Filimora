@@ -41,7 +41,7 @@ export default function Navbar() {
       />
       {/* Search Bar */}
       <section
-        className={`text-white fixed top-24 md:min-w-72 inset-x-5 md:inset-x-auto transition-all duration-200 z-50 ${
+        className={`text-my-white-max fixed top-24 md:min-w-72 inset-x-5 md:inset-x-auto transition-all duration-200 z-50 ${
           showSearchBar
             ? "translate-x-0 opacity-100 md:right-16"
             : "translate-x-full opacity-0 md:-right-10"
@@ -51,7 +51,7 @@ export default function Navbar() {
       </section>
       {/* Menu List */}
       <section
-        className={`text-white fixed md:top-0 bottom-0 md:bottom-5 md:right-1/2 w-screen md:translate-x-1/2 md:max-w-screen-xl rounded-t-xl md:rounded-xl transition-all duration-200 z-50 overflow-hidden ${
+        className={`text-my-white-max fixed md:top-0 bottom-0 md:bottom-5 md:right-1/2 w-screen md:translate-x-1/2 md:max-w-screen-xl rounded-t-xl md:rounded-xl transition-all duration-200 z-50 overflow-hidden ${
           showMenu
             ? "translate-y-0 md:top-24 opacity-100"
             : "translate-y-full md:top-full opacity-0"

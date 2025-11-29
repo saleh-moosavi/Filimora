@@ -13,13 +13,13 @@ export default function MovieDetail({ data }: { data: Anime }) {
         />
       </article>
       {/* Details Section */}
-      <article className="flex flex-col h-full text-white text-sm font-semibold self-start col-span-1">
+      <article className="flex flex-col h-full text-my-white-max text-sm font-semibold self-start col-span-1">
         <section className="space-y-2 mb-2">
-          <h3 className="text-xl font-bold color-white mb-2 text-center md:text-left">
+          <h3 className="text-xl font-bold text-my-white-max mb-2 text-center md:text-left">
             {data.title_english || data.title}
           </h3>
           {data.title_japanese && (
-            <p className="color-white text-xl font-semibold md:text-base md:font-normal text-center md:text-left">
+            <p className="text-my-white-max text-xl font-semibold md:text-base md:font-normal text-center md:text-left">
               {data.title_japanese}
             </p>
           )}
@@ -28,11 +28,11 @@ export default function MovieDetail({ data }: { data: Anime }) {
         <section className="grid grid-cols-2 md:grid-cols-1 *:col-span-1 items-center justify-items-center md:justify-items-start *:w-fit gap-5 mt-auto">
           {data.score && (
             <p className="flex items-center gap-2">
-              <LiaImdb className="size-10 text-yellow-500" />
+              <LiaImdb className="size-10 text-my-warning" />
               <span>{data.score} / 10</span>
             </p>
           )}
-          <p className="flex gap-x-1 color-white text-center flex-wrap">
+          <p className="flex gap-x-1 text-my-white-max text-center flex-wrap">
             {data.genres?.map((genre, index) => (
               <span key={`anime-item-genre-${genre.mal_id}`}>
                 {index !== 0 && ", "}
@@ -53,7 +53,7 @@ export default function MovieDetail({ data }: { data: Anime }) {
           {data.synopsis}
         </p>
       </article>
-      <p className="text-sm font-semibold text-justify text-white md:col-span-2 mt-5 hidden md:block">
+      <p className="text-sm font-semibold text-justify text-my-white-max md:col-span-2 mt-5 hidden md:block">
         {data.synopsis}
       </p>
     </div>

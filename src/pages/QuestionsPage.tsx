@@ -1,11 +1,11 @@
 export default function QuestionsPage() {
   return (
-    <div className="color-white">
+    <div className="text-my-white-max">
       <article className="mb-10">
-        <h2 className="color-seven font-semibold text-lg mb-3">
+        <h2 className="text-my-warning font-semibold text-lg mb-3">
           I downloaded the movie but it doesn't have subtitles?
         </h2>
-        <p className="color-white text-justify">
+        <p className="text-my-white-max text-justify">
           If you have downloaded SoftSub versions, in your device or player,
           from the settings menu, Subtitle menu, check that the subtitle option
           is active and the subtitle language is Persian (PER or FA), if it
@@ -14,10 +14,10 @@ export default function QuestionsPage() {
         </p>
       </article>
       <article className="mb-10">
-        <h2 className="color-seven font-semibold text-lg mb-3">
+        <h2 className="text-my-warning font-semibold text-lg mb-3">
           Downloaded the movie, but only the sound/image is played?
         </h2>
-        <p className="color-white text-justify">
+        <p className="text-my-white-max text-justify">
           Due to the ever-increasing expansion of audio and video formats,
           sometimes some formats may not be played in your player or have no
           sound or video, so you must update your player to the latest version
@@ -30,10 +30,10 @@ export default function QuestionsPage() {
         </p>
       </article>
       <article className="mb-10">
-        <h2 className="color-seven font-semibold text-lg mb-3">
+        <h2 className="text-my-warning font-semibold text-lg mb-3">
           Downloaded the movie, but only the sound/image is played?
         </h2>
-        <p className="color-white text-justify">
+        <p className="text-my-white-max text-justify">
           Due to the ever-increasing expansion of audio and video formats,
           sometimes some formats may not be played in your player or have no
           sound or video, so you must update your player to the latest version
@@ -46,18 +46,18 @@ export default function QuestionsPage() {
         </p>
       </article>
       <article className="mb-10">
-        <h2 className="color-seven font-semibold text-lg mb-3">
+        <h2 className="text-my-warning font-semibold text-lg mb-3">
           Why are subtitles not displayed on TV?
         </h2>
-        <p className="color-white text-justify">
+        <p className="text-my-white-max text-justify">
           Because your TV does not support Soft Sub
         </p>
       </article>
       <article className="mb-10">
-        <h2 className="color-seven font-semibold text-lg mb-3">
+        <h2 className="text-my-warning font-semibold text-lg mb-3">
           Why was the download interrupted or the downloaded file is incomplete?
         </h2>
-        <p className="color-white text-justify">
+        <p className="text-my-white-max text-justify">
           Dear user, you should use the download management software to
           download: for the computer, use the download manager (internet
           download manager), for the Android phone, use adm, and for the iPhone,
@@ -66,21 +66,21 @@ export default function QuestionsPage() {
         </p>
       </article>
       <article className="mb-10">
-        <h2 className="color-seven font-semibold text-lg mb-3">
+        <h2 className="text-my-warning font-semibold text-lg mb-3">
           Why some movies and series are not attached subtitles?
         </h2>
-        <p className="color-white text-justify">
+        <p className="text-my-white-max text-justify">
           Dear user, all content in Avamovi is not attached with subtitles, when
           a user requests content, if subtitles are available, we insert them
           with subtitles, if not, we insert them without subtitles.
         </p>
       </article>
       <article className="mb-10">
-        <h2 className="color-seven font-semibold text-lg mb-3">
+        <h2 className="text-my-warning font-semibold text-lg mb-3">
           I bought a subscription and the account was deducted, but the account
           was not charged?
         </h2>
-        <p className="color-white text-justify">
+        <p className="text-my-white-max text-justify">
           Activation will take about 10 minutes, if the user account is not
           charged during this period, the debited amount will be returned to
           your account within 72 working hours.
