@@ -14,9 +14,9 @@ export default function CategoryItem({ item }: { item: Anime }) {
           />
         </ImageCard>
         <p className="absolute top-0 left-0 text-my-white-max m-2 p-2 text-xs font-semibold bg-my-black-max border-[3px] border-my-warning rounded-lg group-hover:scale-0 transition-all duration-300">
-          {item.rating}
+          {item.score ? item.score + " / 10" : "N/A"}
         </p>
-        <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-t from-my-black-max/80 from-30% flex flex-col justify-end items-center py-3 px-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-t from-my-black-max/80 from-30% flex flex-col justify-end items-center py-3 px-2 opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
           <p className="text-my-white-max font-medium text-sm text-justify line-clamp-5 mb-2">
             {item.synopsis}
           </p>

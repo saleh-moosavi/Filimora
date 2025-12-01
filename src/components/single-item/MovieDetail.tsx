@@ -1,3 +1,4 @@
+import ImageCard from "../ImageCard";
 import { LiaImdb } from "react-icons/lia";
 import { Anime } from "../../types/apiResponse";
 
@@ -6,11 +7,15 @@ export default function MovieDetail({ data }: { data: Anime }) {
     <div className="grid items-center content-start md:grid-cols-2 min-h-[80vh]">
       {/* Image Section */}
       <article className="self-start col-span-1">
-        <img
-          className="rounded-3xl w-[19rem] md:w-10/12 md:max-w-80 mx-auto md:mx-0 object-cover"
-          src={data.images?.webp?.large_image_url}
-          alt={data.title_english || data.title}
-        />
+        <section className="rounded-xl w-[19rem] md:w-10/12 md:max-w-80 mx-auto md:mx-0 overflow-hidden">
+          <ImageCard>
+            <img
+              className="object-cover rounded-xl"
+              src={data.images?.webp?.large_image_url}
+              alt={data.title_english || data.title}
+            />
+          </ImageCard>
+        </section>
       </article>
       {/* Details Section */}
       <article className="flex flex-col h-full text-my-white-max text-sm font-semibold self-start col-span-1">
