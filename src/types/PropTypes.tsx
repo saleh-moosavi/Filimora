@@ -27,6 +27,15 @@ export interface IObserverProps {
   threshold?: number;
 }
 
+export interface IPricingCard {
+  title: string;
+  description: string;
+  price: number;
+  features: string[];
+  period: string;
+  buttonText: string;
+}
+
 export type IPath =
   | "seasons/now" //Currently Airing This Season
   | "season/later" //Latest Anime

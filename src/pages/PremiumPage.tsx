@@ -1,138 +1,66 @@
-import { TiTick } from "react-icons/ti";
+import PricingCard from "../components/premium/PricingCard";
+import PricingTitle from "../components/premium/PricingTitle";
+const pricingCards = [
+  {
+    title: "Otaku Basic",
+    description: "Perfect for casual anime fans who want ad-free streaming.",
+    price: 4.99,
+    period: "per month",
+    features: [
+      "Ad-free streaming",
+      "Access to 500+ anime series",
+      "Standard video quality (720p)",
+      "Watch on 1 device at a time",
+      "Basic subtitles (English only)",
+      "Limited downloads (5 episodes/week)",
+    ],
+    buttonText: "Start Free Trial",
+  },
+  {
+    title: "Anime Pro",
+    description: "Ideal for serious anime enthusiasts with premium features.",
+    price: 9.99,
+    period: "per month",
+    features: [
+      "Ad-free HD streaming (1080p)",
+      "Access to 2000+ anime series & movies",
+      "Watch on 3 devices simultaneously",
+      "Multiple subtitle languages",
+      "Unlimited downloads",
+      "Early access to new episodes",
+      "Access to OVAs and specials",
+      "Custom watchlists",
+    ],
+    buttonText: "Start 7-Day Free Trial",
+  },
+  {
+    title: "Ultimate Weeb",
+    description: "For hardcore fans who want the complete anime experience.",
+    price: 19.99,
+    period: "per month",
+    features: [
+      "Ad-free 4K Ultra HD streaming",
+      "Complete library access (3000+ titles)",
+      "Watch on 5 devices simultaneously",
+      "All subtitle & dub options",
+      "Unlimited downloads + offline viewing",
+      "Virtual anime convention access",
+      "Manga library included",
+      "Priority customer support",
+      "Personalized recommendations",
+    ],
+    buttonText: "Start 14-Day Free Trial",
+  },
+];
 
 export default function PremiumPage() {
   return (
     <div className="text-my-white-max">
-      <div className="text-center mb-10">
-        <h3 className="text-3xl font-semibold">Get full access.</h3>
-        <p className="text-lg font-medium">
-          Get access to every movies and series in the world
-        </p>
-      </div>
+      <PricingTitle />
       <section className="grid gap-5 justify-items-center md:grid-cols-2 lg:grid-cols-3">
-        <article className="bg-my-black-med flex flex-col *:px-5 gap-y-5 py-5 rounded-lg md:w-72 w-72 border-b border-r">
-          <div className="">
-            <h3 className="text-xl font-semibold">Startup Plan</h3>
-            <h3 className="text-lg mt-3">
-              Best suited for experienced developers and small teams.
-            </h3>
-          </div>
-          <div className="h-[0.15rem] bg-my-white-max w-60 mx-5"></div>
-          <div className="text-lg font-medium flex gap-x-5 items-center">
-            <p className="flex items-center gap-x-2">
-              <span className="text-2xl">$</span>
-              <span className="text-5xl font-bold">49</span>
-            </p>
-            <p>per Month</p>
-          </div>
-          <ul className="font-medium text-my-white-max *:flex *:gap-x-2 *:items-center">
-            <li>
-              <TiTick />
-              Priority tech support
-            </li>
-            <li>
-              <TiTick />
-              Access to all components
-            </li>
-            <li>
-              <TiTick />
-              Unlimited projects
-            </li>
-            <li>
-              <TiTick />
-              Free updates
-            </li>
-            <li>
-              <TiTick />
-              Customer support
-            </li>
-          </ul>
-          <button className="bg-my-green-med px-5 py-2 rounded-xl mx-5">
-            Purchase
-          </button>
-        </article>
-        <article className="bg-my-black-med flex flex-col *:px-5 gap-y-5 py-5 rounded-lg md:w-72 w-72 border-b border-r">
-          <div className="">
-            <h3 className="text-xl font-semibold">Startup Plan</h3>
-            <h3 className="text-lg mt-3">
-              Best suited for experienced developers and small teams.
-            </h3>
-          </div>
-          <div className="h-[0.15rem] bg-my-white-max w-60 mx-5"></div>
-          <div className="text-lg font-medium flex gap-x-5 items-center">
-            <p className="flex items-center gap-x-2">
-              <span className="text-2xl">$</span>
-              <span className="text-5xl font-bold">49</span>
-            </p>
-            <p>per Month</p>
-          </div>
-          <ul className="font-medium text-my-white-max *:flex *:gap-x-2 *:items-center">
-            <li>
-              <TiTick />
-              Priority tech support
-            </li>
-            <li>
-              <TiTick />
-              Access to all components
-            </li>
-            <li>
-              <TiTick />
-              Unlimited projects
-            </li>
-            <li>
-              <TiTick />
-              Free updates
-            </li>
-            <li>
-              <TiTick />
-              Customer support
-            </li>
-          </ul>
-          <button className="bg-my-green-med px-5 py-2 rounded-xl mx-5">
-            Purchase
-          </button>
-        </article>
-        <article className="bg-my-black-med flex flex-col *:px-5 gap-y-5 py-5 rounded-lg md:w-72 w-72 border-b border-r">
-          <div className="">
-            <h3 className="text-xl font-semibold">Startup Plan</h3>
-            <h3 className="text-lg mt-3">
-              Best suited for experienced developers and small teams.
-            </h3>
-          </div>
-          <div className="h-[0.15rem] bg-my-white-max w-60 mx-5"></div>
-          <div className="text-lg font-medium flex gap-x-5 items-center">
-            <p className="flex items-center gap-x-2">
-              <span className="text-2xl">$</span>
-              <span className="text-5xl font-bold">49</span>
-            </p>
-            <p>per Month</p>
-          </div>
-          <ul className="font-medium text-my-white-max *:flex *:gap-x-2 *:items-center">
-            <li>
-              <TiTick />
-              Priority tech support
-            </li>
-            <li>
-              <TiTick />
-              Access to all components
-            </li>
-            <li>
-              <TiTick />
-              Unlimited projects
-            </li>
-            <li>
-              <TiTick />
-              Free updates
-            </li>
-            <li>
-              <TiTick />
-              Customer support
-            </li>
-          </ul>
-          <button className="bg-my-green-med px-5 py-2 rounded-xl mx-5">
-            Purchase
-          </button>
-        </article>
+        {pricingCards.map((item, index) => (
+          <PricingCard key={item.title + "-" + index} {...item} />
+        ))}
       </section>
     </div>
   );

@@ -3,13 +3,13 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 
 const Error = lazy(() => import("./pages/Error"));
+const FAQPage = lazy(() => import("./pages/FAQPage"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const Category = lazy(() => import("./pages/Category"));
 const DcmaPage = lazy(() => import("./pages/DcmaPage"));
 const MovieItem = lazy(() => import("./pages/MovieItem"));
 const PremiumPage = lazy(() => import("./pages/PremiumPage"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
-const QuestionsPage = lazy(() => import("./pages/QuestionsPage"));
 
 export const router = createBrowserRouter([
   {
@@ -38,8 +38,8 @@ export const router = createBrowserRouter([
         element: <PremiumPage />,
       },
       {
-        path: "questions",
-        element: <QuestionsPage />,
+        path: "faq",
+        element: <FAQPage />,
       },
       {
         path: "*",

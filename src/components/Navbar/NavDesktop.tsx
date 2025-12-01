@@ -14,10 +14,10 @@ export default function NavDesktop({
         </Link>
         <nav className="bg-my-black-med p-1 rounded-lg shadow-sm shadow-my-white-min text-sm">
           <article className="flex items-center gap-1 *:px-4 *:py-2 *:rounded-lg *:cursor-pointer hover:*:bg-my-white-max/20 *:transition-all *:duration-200">
-            <p onClick={() => handleMenuMouseOver("toggle")}>Anime</p>
+            <p onClick={() => handleMenuMouseOver("toggle")}>Category</p>
             <Link to={"/dcma"}>DMCA</Link>
             <Link to={"/premium"}>Premium</Link>
-            <Link to={"/questions"}>Questions</Link>
+            <Link to={"/faq"}>FAQ</Link>
           </article>
         </nav>
         <article className="flex items-center gap-5 *:size-6 *:cursor-pointer">

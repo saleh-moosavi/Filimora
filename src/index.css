@@ -8,11 +8,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--col-seven);
+  @apply bg-my-white-min
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--col-black);
+  @apply bg-my-black-max
 }
 
 ::-webkit-scrollbar-button {
@@ -25,12 +25,10 @@
 
 /* Optional: Style for all bullets */
 .swiper-pagination-bullet {
-  background-color: var(--col-white) !important;
-  opacity: 1 !important;
+  @apply bg-my-white-max opacity-100 !important
 }
 
 /* Style for the active bullet */
 .swiper-pagination-bullet-active {
-  background-color: var(--col-seven) !important;
-  opacity: 1 !important;
+  @apply bg-my-green-min opacity-100 !important
 }
