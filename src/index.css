@@ -32,3 +32,18 @@
 .swiper-pagination-bullet-active {
   @apply bg-my-green-min opacity-100 !important
 }
+
+.image-card-animation {
+  animation: spinColor 5s linear infinite;
+  @apply bg-gradient-to-br from-my-green-low to-my-error origin-top-right h-full aspect-square
+}
+
+@keyframes spinColor {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
