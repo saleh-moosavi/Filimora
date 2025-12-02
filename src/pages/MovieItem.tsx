@@ -5,6 +5,7 @@ import Slider from "../components/slider/Slider";
 import Reviews from "../components/single-item/Reviews";
 import MovieDetail from "../components/single-item/MovieDetail";
 import SliderSkeleton from "../components/slider/SliderSkeleton";
+import ExtraDetails from "../components/single-item/ExtraDetails";
 import ReviewsSkeleton from "../components/single-item/ReviewsSkeleton";
 import MovieDetailSkeleton from "../components/single-item/MovieDetailSkeleton";
 
@@ -21,7 +22,10 @@ export default function MovieItem() {
         {isLoading ? (
           <MovieDetailSkeleton />
         ) : data ? (
-          <MovieDetail data={data} />
+          <>
+            <MovieDetail data={data} />
+            <ExtraDetails data={data} />
+          </>
         ) : (
           <div>Error loading movie details</div>
         )}
