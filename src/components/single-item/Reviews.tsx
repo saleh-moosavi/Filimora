@@ -4,15 +4,15 @@ import ReviewButton from "./ReviewButton";
 import { IReview } from "../../types/apiResponse";
 
 export default function Reviews({ data }: { data: IReview[] }) {
-  const [reviewCount, setReviewCount] = useState<number>(10);
+  const [reviewCount, setReviewCount] = useState<number>(5);
 
   const handleShowMoreReview = () => {
     if (data.length < reviewCount) return;
-    setReviewCount((prev) => prev + 10);
+    setReviewCount((prev) => prev + 5);
   };
   const handleShowLessReview = () => {
-    if (reviewCount <= 10) return;
-    setReviewCount((prev) => prev - 10);
+    if (reviewCount <= 5) return;
+    setReviewCount(5);
   };
 
   return (

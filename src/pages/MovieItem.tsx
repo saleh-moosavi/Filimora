@@ -8,6 +8,7 @@ import SliderSkeleton from "../components/slider/SliderSkeleton";
 import ExtraDetails from "../components/single-item/ExtraDetails";
 import ReviewsSkeleton from "../components/single-item/ReviewsSkeleton";
 import MovieDetailSkeleton from "../components/single-item/MovieDetailSkeleton";
+import Trailer from "../components/single-item/Trailer";
 
 export default function MovieItem() {
   const { id } = useParams();
@@ -25,6 +26,7 @@ export default function MovieItem() {
           <>
             <MovieDetail data={data} />
             <ExtraDetails data={data} />
+            <Trailer src={data.trailer.embed_url} />
           </>
         ) : (
           <div>Error loading movie details</div>

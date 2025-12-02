@@ -3,7 +3,6 @@ import { LiaImdb } from "react-icons/lia";
 import { Anime } from "../../types/apiResponse";
 
 export default function MovieDetail({ data }: { data: Anime }) {
-  console.log(data);
   return (
     <div className="grid items-center content-start md:grid-cols-2 min-h-[80vh]">
       {/* Image Section */}
@@ -11,7 +10,7 @@ export default function MovieDetail({ data }: { data: Anime }) {
         <section className="rounded-xl w-[19rem] md:w-10/12 md:max-w-80 mx-auto md:mx-0 h-full overflow-hidden">
           <ImageCard>
             <img
-              className="object-cover rounded-xl w-full h-full"
+              className="object-cover rounded-xl w-full h-full bg-my-black-min"
               src={data.images?.webp?.large_image_url}
               alt={data.title_english || data.title}
             />
