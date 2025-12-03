@@ -4,12 +4,14 @@ import { createBrowserRouter } from "react-router-dom";
 
 const Error = lazy(() => import("./pages/Error"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
+const Profile = lazy(() => import("./pages/Profile"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const Category = lazy(() => import("./pages/Category"));
 const DcmaPage = lazy(() => import("./pages/DcmaPage"));
 const MovieItem = lazy(() => import("./pages/MovieItem"));
 const PremiumPage = lazy(() => import("./pages/PremiumPage"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
+const LogInRegister = lazy(() => import("./pages/LogInRegister"));
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ export const router = createBrowserRouter([
       {
         path: "faq",
         element: <FAQPage />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
+      },
+      {
+        path: "login-register",
+        element: <LogInRegister />,
       },
       {
         path: "*",

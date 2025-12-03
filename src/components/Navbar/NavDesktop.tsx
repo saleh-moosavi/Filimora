@@ -22,7 +22,9 @@ export default function NavDesktop({
         </nav>
         <article className="flex items-center gap-5 *:size-6 *:cursor-pointer">
           <LuSearch onClick={() => handleSearchMouseOver("toggle")} />
-          <LuUser />
+          <Link to="/profile">
+            <LuUser className="size-6" />
+          </Link>
         </article>
       </header>
     </>
