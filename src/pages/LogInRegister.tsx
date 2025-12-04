@@ -1,11 +1,27 @@
-import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AuthView from "../components/profile/AuthView";
+import useLocalStorage from "../hooks/useLocalStorage";
+import { FormEvent, useLayoutEffect, useState } from "react";
 
 export default function LogInRegister() {
   const navigate = useNavigate();
   const [isError, setIsError] = useState(false);
+  const [isDenied, setIsDenied] = useState(true);
+  const { getData, setLogIn } = useLocalStorage();
   const [isRegister, setIsRegister] = useState(false);
+
+  const getLocalStorageData = async () => {
+    const savedData = await getData();
+    if (savedData?.user !== null) {
+      navigate("/profile");
+      return;
+    }
+    setIsDenied(false);
+  };
+
+  useLayoutEffect(() => {
+    getLocalStorageData();
+  }, []);
 
   //handle login
   const loginHandler = (e: FormEvent<HTMLFormElement>) => {
@@ -17,6 +33,7 @@ export default function LogInRegister() {
     const password = formData.get("password") as string;
 
     if (email.trim() == "mock@email.com" && password.trim() == "12345678") {
+      setLogIn(email, password);
       navigate("/profile");
     } else {
       setIsError(true);
@@ -44,6 +61,8 @@ export default function LogInRegister() {
       setIsError(true);
     }
   };
+
+  if (isDenied) return null;
 
   return (
     <AuthView

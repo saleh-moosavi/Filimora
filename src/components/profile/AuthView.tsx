@@ -15,16 +15,16 @@ export default function AuthView({
 }) {
   return (
     <section className="text-my-white-max w-full min-h-[80vh] flex justify-center items-center">
-      <article className="grid justify-center grid-cols-2 *:col-span-1 min-h-[26rem] w-2/3 rounded-xl overflow-hidden shadow-lg shadow-my-white-min/30">
-        <aside>
+      <article className="relative grid md:justify-center md:grid-cols-2 *:col-span-1 min-h-[26rem] w-11/12 md:w-2/3 rounded-xl overflow-hidden shadow-lg shadow-my-white-min/30">
+        <aside className="absolute inset-0 z-10 md:static md:inset-auto md:z-auto">
           <img
-            className="object-cover w-full h-full bg-my-black-min"
+            className="object-cover w-full h-full bg-my-black-min blur md:blur-0"
             src="/login.jpg"
           />
         </aside>
         <form
           onSubmit={isRegister ? registerHandler : loginHandler}
-          className="grid gap-5 items-center w-full h-full bg-my-black-med p-5"
+          className="grid gap-5 items-center w-full h-full md:bg-my-black-med bg-my-black-med/70 p-5 z-20 md:z-auto"
         >
           <h3 className="text-xl font-bold text-center">
             {isRegister ? "Register in" : "Login to"} FAnime
