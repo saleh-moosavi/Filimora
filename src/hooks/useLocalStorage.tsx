@@ -9,38 +9,81 @@ interface IData {
 }
 
 export default function useLocalStorage() {
-  const getData = async () => {
-    const local = localStorage.getItem("FAnime");
-    const data: IData = await JSON.parse(local || "null");
-    return data;
+  const getData = async (): Promise<IData> => {
+    try {
+      const local = localStorage.getItem("FAnime");
+      if (!local) {
+        return { user: null, likedList: [] };
+      }
+      const data: IData = JSON.parse(local);
+      return {
+        user: data.user || null,
+        likedList: data.likedList || [],
+      };
+    } catch (error) {
+      console.error("Error reading localStorage:", error);
+      return { user: null, likedList: [] };
+    }
   };
 
   const setLogIn = async (email: string, password: string) => {
-    const oldData = await getData();
-    localStorage.setItem(
-      "FAnime",
-      JSON.stringify({ ...oldData, user: { email, password } })
-    );
+    try {
+      const oldData = await getData();
+      localStorage.setItem(
+        "FAnime",
+        JSON.stringify({ ...oldData, user: { email, password } })
+      );
+    } catch (error) {
+      console.error("Error setting login:", error);
+    }
   };
+
   const setLogOut = async () => {
-    const oldData = await getData();
-    localStorage.setItem("FAnime", JSON.stringify({ ...oldData, user: null }));
+    try {
+      const oldData = await getData();
+      localStorage.setItem(
+        "FAnime",
+        JSON.stringify({ ...oldData, user: null })
+      );
+    } catch (error) {
+      console.error("Error setting logout:", error);
+    }
   };
+
   const addLikedAnime = async (anime: Anime) => {
-    const oldData = await getData();
-    const newData = oldData?.likedList.push(anime);
-    localStorage.setItem(
-      "FAnime",
-      JSON.stringify({ ...oldData, likedList: newData })
-    );
+    try {
+      const oldData = await getData();
+      const currentLikedList = Array.isArray(oldData.likedList)
+        ? oldData.likedList
+        : [];
+
+      if (!currentLikedList.some((item) => item.mal_id === anime.mal_id)) {
+        const newData = {
+          ...oldData,
+          likedList: [...currentLikedList, anime],
+        };
+        localStorage.setItem("FAnime", JSON.stringify(newData));
+      }
+    } catch (error) {
+      console.error("Error adding liked anime:", error);
+    }
   };
+
   const removeLikedAnime = async (id: number) => {
-    const oldData = await getData();
-    const newData = oldData?.likedList.filter((item) => item.mal_id !== id);
-    localStorage.setItem(
-      "FAnime",
-      JSON.stringify({ ...oldData, likedList: newData })
-    );
+    try {
+      const oldData = await getData();
+      const currentLikedList = Array.isArray(oldData.likedList)
+        ? oldData.likedList
+        : [];
+
+      const newData = {
+        ...oldData,
+        likedList: currentLikedList.filter((item) => item.mal_id !== id),
+      };
+      localStorage.setItem("FAnime", JSON.stringify(newData));
+    } catch (error) {
+      console.error("Error removing liked anime:", error);
+    }
   };
 
   return { getData, setLogIn, setLogOut, addLikedAnime, removeLikedAnime };
