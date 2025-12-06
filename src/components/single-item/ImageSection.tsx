@@ -1,26 +1,24 @@
 import ImageCard from "../ImageCard";
 import { Anime } from "../../types/apiResponse";
+import useLocalStorage from "../../hooks/useLocalStorage";
 import { BsFillBookmarkPlusFill, BsBookmarkCheckFill } from "react-icons/bs";
 
 export default function ImageSection({
   data,
   isLiked,
   onToggle,
-  addToList,
-  removeFromList,
 }: {
   data: Anime;
   isLiked: boolean;
   onToggle?: () => void;
-  addToList: (anime: Anime) => Promise<void>;
-  removeFromList: (id: number) => Promise<void>;
 }) {
+  const { addLikedAnime, removeLikedAnime } = useLocalStorage();
   const handleToggleAdd = async () => {
     try {
       if (isLiked) {
-        await removeFromList(data.mal_id);
+        await removeLikedAnime(data.mal_id);
       } else {
-        await addToList(data);
+        await addLikedAnime(data);
       }
       onToggle?.();
     } catch (error) {

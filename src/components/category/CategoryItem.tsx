@@ -20,9 +20,15 @@ export default function CategoryItem({ item }: { item: Anime }) {
           <p className="text-my-white-max font-medium text-sm text-justify line-clamp-5 mb-2">
             {item.synopsis}
           </p>
-          <ul className="text-my-white-min font-medium text-sm text-justify flex gap-x-2 pt-1 line-clamp-4 border-t">
-            {item.genres.map((genre) => {
-              return <li key={genre.mal_id}>{genre.name}</li>;
+          <ul className="text-my-white-min font-medium text-sm text-center space-x-2 pt-1 line-clamp-4 border-t *:inline-block">
+            <li>Genres : </li>
+            {item.genres.map((genre, index) => {
+              return (
+                <li key={genre.mal_id}>
+                  {index !== 0 && " - "}
+                  {genre.name}
+                </li>
+              );
             })}
           </ul>
         </div>

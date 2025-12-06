@@ -32,9 +32,14 @@ export default function Profile() {
   if (isDenied) return null;
 
   return (
-    <section className="text-my-white-max w-full min-h-[80vh">
+    <section className="text-my-white-max w-full min-h-[80vh] flex flex-col">
       <ProfileView data={data} />
-      <button onClick={handleLogOut}>Log Out</button>
+      <button
+        className="px-8 py-2 bg-my-error font-semibold rounded-lg w-fit mt-auto mx-auto text-center"
+        onClick={handleLogOut}
+      >
+        Log Out
+      </button>
     </section>
   );
 }

@@ -5,7 +5,7 @@ import { useLayoutEffect, useState } from "react";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
 export default function MovieDetail({ data }: { data: Anime }) {
-  const { getData, addLikedAnime, removeLikedAnime } = useLocalStorage();
+  const { getData } = useLocalStorage();
   const [isSaved, setIsSaved] = useState(false);
 
   const getLocalStorageData = async () => {
@@ -26,8 +26,6 @@ export default function MovieDetail({ data }: { data: Anime }) {
       <ImageSection
         data={data}
         isLiked={isSaved}
-        addToList={addLikedAnime}
-        removeFromList={removeLikedAnime}
         onToggle={() => setIsSaved(!isSaved)}
       />
       {/* Details Section */}
