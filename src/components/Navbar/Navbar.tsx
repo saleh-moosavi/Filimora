@@ -1,8 +1,7 @@
 import Menu from "./Menu";
 import { useState } from "react";
-import NavMobile from "./NavMobile";
 import SearchBar from "./SearchBar";
-import NavDesktop from "./NavDesktop";
+import NavBarContent from "./NavBarContent";
 
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
@@ -26,30 +25,20 @@ export default function Navbar() {
     setShowSearchBar(false);
     setShowMenu(isShow);
   };
+
   return (
     <>
-      <NavDesktop
-        handleSearchMouseOver={handleSearchMouseOver}
-        showSearchBar={showSearchBar}
+      {/* NavBarContent */}
+      <NavBarContent
         handleMenuMouseOver={handleMenuMouseOver}
-      />
-      <NavMobile
         handleSearchMouseOver={handleSearchMouseOver}
-        showSearchBar={showSearchBar}
-        handleMenuMouseOver={handleMenuMouseOver}
-        showMenu={showMenu}
       />
-      {/* Search Bar */}
-      <section
-        className={`text-my-white-max fixed top-24 md:min-w-72 inset-x-5 md:inset-x-auto transition-all duration-200 z-50 ${
-          showSearchBar
-            ? "translate-x-0 opacity-100 md:right-16"
-            : "translate-x-full opacity-0 md:-right-10"
-        }`}
-      >
-        <SearchBar handleSearchMouseOver={handleSearchMouseOver} />
-      </section>
-      {/* Menu List */}
+      {/* Search Bar Section */}
+      <SearchBar
+        showSearchBar={showSearchBar}
+        handleSearchMouseOver={handleSearchMouseOver}
+      />
+      {/* Menu List Drop */}
       <section
         className={`text-my-white-max fixed md:top-0 bottom-0 md:bottom-5 md:right-1/2 w-screen md:translate-x-1/2 md:max-w-screen-xl rounded-t-xl md:rounded-xl transition-all duration-200 z-50 overflow-hidden ${
           showMenu

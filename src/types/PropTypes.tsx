@@ -36,6 +36,16 @@ export interface IPricingCard {
   buttonText: string;
 }
 
+export interface IHeader {
+  handleMenuMouseOver: (isShow: boolean | "toggle") => void;
+  handleSearchMouseOver: (isShow: boolean | "toggle") => void;
+}
+
+export interface ISearchBar {
+  showSearchBar: boolean;
+  handleSearchMouseOver: (isShow: boolean) => void;
+}
+
 export type IPath =
   | "seasons/now" //Currently Airing This Season
   | "season/later" //Latest Anime

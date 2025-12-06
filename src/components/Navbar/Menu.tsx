@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { IGenre } from "../../types/apiResponse";
-import data from "../../dataJson/genresSubNav.json";
+import Genres from "../../dataJson/genresSubNav.json";
 
 export default function Menu({
   handleMenuMouseOver,
@@ -19,10 +19,13 @@ export default function Menu({
         <span className="block w-1/2 bg-my-white-max rounded-b-md h-2 mx-auto"></span>
       </div>
       <ul className="grid grid-cols-2 md:grid-cols-4 col-span-1 gap-2 font-bold">
-        {data.map((item: IGenre) => {
+        {Genres.map((genre: IGenre) => {
           return (
-            <Link to={`/category/${item.mal_id}`} key={item.mal_id + item.name}>
-              <li key={item.mal_id}>{item.name}</li>
+            <Link
+              to={`/category/${genre.mal_id}`}
+              key={genre.mal_id + genre.name}
+            >
+              <li key={genre.mal_id}>{genre.name}</li>
             </Link>
           );
         })}
