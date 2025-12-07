@@ -16,7 +16,7 @@ export default function Category() {
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
       {data?.map((anime) => {
         return (
-          <div key={`category-item-${anime.mal_id}`}>
+          <div key={`category-item-${anime.mal_id + anime.title}`}>
             <CategoryItem item={anime} />
           </div>
         );

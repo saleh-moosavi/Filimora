@@ -5,7 +5,7 @@ import { ISearchBar } from "../../types/PropTypes";
 
 export default function SearchBar({
   showSearchBar,
-  handleSearchMouseOver,
+  handleOverlayToggle,
 }: ISearchBar) {
   const inputRef = useRef<null | HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function SearchBar({
     e.preventDefault();
     const searchTerm = inputRef.current?.value;
     if (searchTerm && searchTerm.trim()) {
-      handleSearchMouseOver(false);
+      handleOverlayToggle("search", false);
       inputRef.current!.value = "";
       navigate(
         `/category?link=anime?q=${encodeURIComponent(searchTerm.trim())}`
@@ -34,7 +34,7 @@ export default function SearchBar({
         <section className="flex justify-between items-center">
           <p>Search Your Anime</p>
           <LuX
-            onClick={() => handleSearchMouseOver(false)}
+            onClick={() => handleOverlayToggle("search", false)}
             className="size-5 self-end text-my-error cursor-pointer"
           />
         </section>

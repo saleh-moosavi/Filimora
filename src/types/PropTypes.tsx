@@ -36,14 +36,26 @@ export interface IPricingCard {
   buttonText: string;
 }
 
-export interface IHeader {
-  handleMenuMouseOver: (isShow: boolean | "toggle") => void;
-  handleSearchMouseOver: (isShow: boolean | "toggle") => void;
+type overlayToggle = (
+  type: "search" | "menu",
+  isShow: boolean | "toggle"
+) => void;
+
+export interface INavBarContent {
+  showMenu: boolean;
+  handleOverlayToggle: overlayToggle;
 }
 
 export interface ISearchBar {
   showSearchBar: boolean;
-  handleSearchMouseOver: (isShow: boolean) => void;
+  handleOverlayToggle: overlayToggle;
+}
+
+export interface IMenu {
+  showMenu: boolean;
+  showCategories: boolean;
+  handleShowCategory: () => void;
+  handleOverlayToggle: overlayToggle;
 }
 
 export type IPath =

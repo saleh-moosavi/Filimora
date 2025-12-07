@@ -6,48 +6,48 @@ import NavBarContent from "./NavBarContent";
 export default function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
+  const [showCategories, setShowCategories] = useState(false);
 
-  const handleSearchMouseOver = (isShow: boolean | "toggle") => {
-    if (isShow === "toggle") {
-      setShowMenu(false);
-      setShowSearchBar((prev) => !prev);
-      return;
-    }
-    setShowMenu(false);
-    setShowSearchBar(isShow);
+  const handleShowCategory = () => {
+    setShowCategories((prev) => !prev);
   };
-  const handleMenuMouseOver = (isShow: boolean | "toggle") => {
-    if (isShow === "toggle") {
+
+  const handleOverlayToggle = (
+    type: "search" | "menu",
+    isShow: boolean | "toggle"
+  ) => {
+    const isToggle = isShow === "toggle";
+
+    // Close the other overlay
+    if (type === "search") {
+      setShowMenu(false);
+      setShowSearchBar(isToggle ? (prev) => !prev : isShow);
+    } else {
       setShowSearchBar(false);
-      setShowMenu((prev) => !prev);
-      return;
+      setShowMenu(isToggle ? (prev) => !prev : isShow);
     }
-    setShowSearchBar(false);
-    setShowMenu(isShow);
   };
 
   return (
     <>
       {/* NavBarContent */}
       <NavBarContent
-        handleMenuMouseOver={handleMenuMouseOver}
-        handleSearchMouseOver={handleSearchMouseOver}
+        showMenu={showMenu}
+        handleOverlayToggle={handleOverlayToggle}
       />
       {/* Search Bar Section */}
       <SearchBar
         showSearchBar={showSearchBar}
-        handleSearchMouseOver={handleSearchMouseOver}
+        handleOverlayToggle={handleOverlayToggle}
       />
       {/* Menu List Drop */}
-      <section
-        className={`text-my-white-max fixed md:top-0 bottom-0 md:bottom-5 md:right-1/2 w-screen md:translate-x-1/2 md:max-w-screen-xl rounded-t-xl md:rounded-xl transition-all duration-200 z-50 overflow-hidden ${
-          showMenu
-            ? "translate-y-0 md:top-24 opacity-100"
-            : "translate-y-full md:top-full opacity-0"
-        }`}
-      >
-        <Menu handleMenuMouseOver={handleMenuMouseOver} />
-      </section>
+
+      <Menu
+        showMenu={showMenu}
+        showCategories={showCategories}
+        handleShowCategory={handleShowCategory}
+        handleOverlayToggle={handleOverlayToggle}
+      />
     </>
   );
 }
