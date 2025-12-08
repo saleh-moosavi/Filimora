@@ -6,8 +6,8 @@ const initialState = {
   scroll: window.scrollY,
 };
 
-const stateSlice = createSlice({
-  name: "stateManager",
+const windowSlice = createSlice({
+  name: "windowSlice",
   initialState,
   reducers: {
     setTheme: (state) => {
@@ -22,5 +22,5 @@ const stateSlice = createSlice({
   },
 });
 
-export default stateSlice.reducer;
-export const { setTheme, setWidth, setScroll } = stateSlice.actions;
+export default windowSlice.reducer;
+export const { setTheme, setWidth, setScroll } = windowSlice.actions;

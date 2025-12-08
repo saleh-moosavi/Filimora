@@ -1,10 +1,14 @@
-import stateManagerReducer from "./stateSlice";
+import toastSlice from "./ToastSlice";
+import windowSlice from "./WindowSlice";
 import { configureStore } from "@reduxjs/toolkit";
 
 const store = configureStore({
   reducer: {
-    stateManager: stateManagerReducer,
+    toastSlice: toastSlice,
+    windowSlice: windowSlice,
   },
 });
 
 export default store;
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;

@@ -1,5 +1,7 @@
 import ImageCard from "../ImageCard";
+import { useDispatch } from "react-redux";
 import { Anime } from "../../types/apiResponse";
+import { setToast } from "../../redux/ToastSlice";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import { BsFillBookmarkPlusFill, BsBookmarkCheckFill } from "react-icons/bs";
 
@@ -13,12 +15,28 @@ export default function ImageSection({
   onToggle?: () => void;
 }) {
   const { addLikedAnime, removeLikedAnime } = useLocalStorage();
+  const dispatch = useDispatch();
+
   const handleToggleAdd = async () => {
     try {
       if (isLiked) {
         await removeLikedAnime(data.mal_id);
+        dispatch(
+          setToast({
+            isVisible: true,
+            mode: "WARNING",
+            text: "Anime Removerd From Your List",
+          })
+        );
       } else {
         await addLikedAnime(data);
+        dispatch(
+          setToast({
+            isVisible: true,
+            mode: "SUCCESS",
+            text: "Anime Added To Your List",
+          })
+        );
       }
       onToggle?.();
     } catch (error) {
