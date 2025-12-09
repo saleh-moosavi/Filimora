@@ -18,7 +18,7 @@ export default function MovieDetailSkeleton() {
         <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
           {[...Array(8)].map((_, index) => (
             <div
-              key={`movie-detail-skeleton-details-${index}`}
+              key={`Movie-Detail-Skeleton-Details-${index}`}
               className="h-6 max-w-52 bg-my-black-min rounded"
             ></div>
           ))}
@@ -28,7 +28,7 @@ export default function MovieDetailSkeleton() {
         <div className="md:hidden space-y-2">
           {[...Array(4)].map((_, index) => (
             <div
-              key={`movie-detail-skeleton-synopsis-mobile-${index}`}
+              key={`Movie-Detail-Skeleton-Synopsis-Mobile-${index}`}
               className="h-4 bg-my-black-min rounded"
             ></div>
           ))}

@@ -52,8 +52,8 @@ export default function NavBarContent({
                 </p>
                 {NavLinks.map((link) => (
                   <Link
-                    key={link.id}
                     to={link.href}
+                    key={"Nav-Link-Top-" + link.id}
                     className={`${isActive(`/${link.href}`)}`}
                   >
                     {link.title}

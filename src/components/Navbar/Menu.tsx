@@ -37,9 +37,9 @@ export default function Menu({
         <ul className="grid md:hidden gap-2 font-bold *:w-full *:bg-my-black-min *:p-2 *:rounded-lg">
           {NavLinks.map((link) => (
             <Link
-              onClick={handleCloseMenu}
               to={link.href}
-              key={link.href + link.id}
+              onClick={handleCloseMenu}
+              key={"Nav-Link-Menu-" + link.href + link.id}
             >
               {link.title}
             </Link>

@@ -14,7 +14,10 @@ export default function ListOfSlides() {
   return (
     <div>
       {sliders.map((slider, index) => (
-        <Observer key={slider.path + index} skeleton={<SliderSkeleton />}>
+        <Observer
+          key={"Slider" + slider.path + index}
+          skeleton={<SliderSkeleton />}
+        >
           <Slider
             title={slider.title}
             path={slider.path as IPath}

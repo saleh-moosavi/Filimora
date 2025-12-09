@@ -24,7 +24,7 @@ export default function PricingCard({
       </section>
       <ul className="font-medium text-my-white-max space-y-2">
         {features.map((feature, index) => (
-          <li key={feature + "-" + index} className="text-xs">
+          <li key={"PricingCard-" + feature + "-" + index} className="text-xs">
             {feature}
           </li>
         ))}

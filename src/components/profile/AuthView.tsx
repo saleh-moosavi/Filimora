@@ -1,4 +1,4 @@
-import { FormEvent } from "react";
+import { IAuthView } from "../../types/PropTypes";
 
 export default function AuthView({
   isError,
@@ -6,13 +6,7 @@ export default function AuthView({
   loginHandler,
   setIsRegister,
   registerHandler,
-}: {
-  isError: boolean;
-  isRegister: boolean;
-  loginHandler: (e: FormEvent<HTMLFormElement>) => void;
-  registerHandler: (e: FormEvent<HTMLFormElement>) => void;
-  setIsRegister: React.Dispatch<React.SetStateAction<boolean>>;
-}) {
+}: IAuthView) {
   return (
     <section className="text-my-white-max w-full min-h-[80vh] flex justify-center items-center">
       <article className="relative grid md:justify-center md:grid-cols-2 *:col-span-1 min-h-[26rem] w-11/12 md:w-2/3 rounded-xl overflow-hidden shadow-lg shadow-my-white-min/30">

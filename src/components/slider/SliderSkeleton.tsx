@@ -5,7 +5,7 @@ export default function SliderSkeleton() {
       <section className="w-full h-96 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 my-10">
         {[0, 1, 2, 3, 4].map((item) => (
           <div
-            key={`SliderSkeleton-${item}`}
+            key={`Slider-Skeleton-Item-${item}`}
             className={`
               w-full h-full min-h-52 flex flex-col gap-2
               ${item <= 1 && "invisible sm:visible"}

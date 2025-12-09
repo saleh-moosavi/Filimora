@@ -1,10 +1,13 @@
+import { useDispatch } from "react-redux";
 import { Anime } from "../types/apiResponse";
+import { setToast } from "../redux/ToastSlice";
 import { useNavigate } from "react-router-dom";
 import { useLayoutEffect, useState } from "react";
 import useLocalStorage from "../hooks/useLocalStorage";
 import ProfileView from "../components/profile/ProfileView";
 
 export default function Profile() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [data, setData] = useState<Anime[]>([]);
   const [isDenied, setIsDenied] = useState(true);
@@ -22,6 +25,13 @@ export default function Profile() {
 
   const handleLogOut = () => {
     setLogOut();
+    dispatch(
+      setToast({
+        mode: "SUCCESS",
+        isVisible: true,
+        text: "Log Out Done Successfully",
+      })
+    );
     navigate("/login-register");
   };
 

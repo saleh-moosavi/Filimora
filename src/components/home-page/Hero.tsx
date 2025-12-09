@@ -18,7 +18,7 @@ export default function Hero() {
           </SwiperSlide>
         ) : (
           data?.map((item, index) => (
-            <SwiperSlide key={item.mal_id}>
+            <SwiperSlide key={"Hero-item-" + item.mal_id}>
               <img
                 className="absolute inset-0 w-full h-full object-cover rounded-xl blur-md -z-10 invisible md:visible"
                 src={item.images.webp.small_image_url}

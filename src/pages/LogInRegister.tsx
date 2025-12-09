@@ -1,3 +1,5 @@
+import { useDispatch } from "react-redux";
+import { setToast } from "../redux/ToastSlice";
 import { useNavigate } from "react-router-dom";
 import AuthView from "../components/profile/AuthView";
 import useLocalStorage from "../hooks/useLocalStorage";
@@ -5,6 +7,7 @@ import { FormEvent, useLayoutEffect, useState } from "react";
 
 export default function LogInRegister() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [isError, setIsError] = useState(false);
   const [isDenied, setIsDenied] = useState(true);
   const { getData, setLogIn } = useLocalStorage();
@@ -34,9 +37,23 @@ export default function LogInRegister() {
 
     if (email.trim() == "mock@email.com" && password.trim() == "12345678") {
       setLogIn(email, password);
+      dispatch(
+        setToast({
+          mode: "SUCCESS",
+          isVisible: true,
+          text: "Login Done Successfully",
+        })
+      );
       navigate("/profile");
     } else {
       setIsError(true);
+      dispatch(
+        setToast({
+          mode: "ERROR",
+          isVisible: true,
+          text: "Login Failed!",
+        })
+      );
     }
   };
 
@@ -57,8 +74,22 @@ export default function LogInRegister() {
     ) {
       setIsRegister(false);
       setIsError(false);
+      dispatch(
+        setToast({
+          mode: "SUCCESS",
+          isVisible: true,
+          text: "Account Added Successfully",
+        })
+      );
     } else {
       setIsError(true);
+      dispatch(
+        setToast({
+          mode: "ERROR",
+          isVisible: true,
+          text: "Register Failed!",
+        })
+      );
     }
   };
 

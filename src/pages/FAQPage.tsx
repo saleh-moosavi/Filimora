@@ -82,7 +82,10 @@ export default function FAQPage() {
   return (
     <section className="text-my-white-max">
       {questions.map((question, index) => (
-        <article key={question.question + "-" + index} className="mb-10">
+        <article
+          key={"FAQ-Item-" + question.question + "-" + index}
+          className="mb-10"
+        >
           <h2 className="text-my-warning font-semibold text-lg mb-3">
             {question.question}
           </h2>

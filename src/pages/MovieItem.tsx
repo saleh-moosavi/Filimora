@@ -3,12 +3,12 @@ import Observer from "../components/Observer";
 import useGetAnime from "../hooks/useGetAnime";
 import Slider from "../components/slider/Slider";
 import Reviews from "../components/single-item/Reviews";
+import Trailer from "../components/single-item/Trailer";
 import MovieDetail from "../components/single-item/MovieDetail";
 import SliderSkeleton from "../components/slider/SliderSkeleton";
 import ExtraDetails from "../components/single-item/ExtraDetails";
 import ReviewsSkeleton from "../components/single-item/ReviewsSkeleton";
 import MovieDetailSkeleton from "../components/single-item/MovieDetailSkeleton";
-import Trailer from "../components/single-item/Trailer";
 
 export default function MovieItem() {
   const { id } = useParams();

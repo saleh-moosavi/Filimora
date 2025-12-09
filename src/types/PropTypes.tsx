@@ -1,4 +1,5 @@
-import { ReactNode } from "react";
+import { Anime } from "./apiResponse";
+import { FormEvent, ReactNode } from "react";
 
 export interface ISlider {
   path: IPath;
@@ -66,3 +67,24 @@ export type IPath =
   | "recommendations/anime" //Recent Anime Recommendations
   | "anime?filter[year]=2025&order_by=score&sort=desc&limit=20" //Best of 2025
   | string; //custom
+
+export interface IAuthView {
+  isError: boolean;
+  isRegister: boolean;
+  loginHandler: (e: FormEvent<HTMLFormElement>) => void;
+  registerHandler: (e: FormEvent<HTMLFormElement>) => void;
+  setIsRegister: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export interface IimageSection {
+  data: Anime;
+  isLiked: boolean;
+  onToggle?: () => void;
+}
+
+export interface IReviewButton {
+  dataLength: number;
+  reviewCount: number;
+  showMore: () => void;
+  showLess: () => void;
+}

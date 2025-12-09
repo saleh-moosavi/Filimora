@@ -26,7 +26,7 @@ export default function MainDetails({ data }: { data: Anime }) {
           )}
           <p className="inline-block text-my-white-max">
             {data.genres?.map((genre, index) => (
-              <span key={`anime-item-genre-${genre.mal_id}`}>
+              <span key={`Anime-Item-Genre-${genre.mal_id}`}>
                 {index !== 0 && " , "}
                 {genre.name}
               </span>

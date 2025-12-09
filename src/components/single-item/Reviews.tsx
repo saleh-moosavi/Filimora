@@ -27,7 +27,7 @@ export default function Reviews({ data }: { data: IReview[] }) {
       {/* Comment section */}
       {data.slice(0, reviewCount).map((review) => {
         return (
-          <article key={`review-item-${review.mal_id}`} className="mt-5">
+          <article key={`Review-Item-${review.mal_id}`} className="mt-5">
             <div className="bg-my-black-med p-5 rounded-lg">
               <section className="flex flex-col md:flex-row gap-5 md:items-center md:justify-between">
                 <div className="flex gap-x-5 items-center">

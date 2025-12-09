@@ -1,14 +1,11 @@
+import { IReviewButton } from "../../types/PropTypes";
+
 export default function ReviewButton({
   showMore,
   showLess,
   dataLength,
   reviewCount,
-}: {
-  dataLength: number;
-  reviewCount: number;
-  showMore: () => void;
-  showLess: () => void;
-}) {
+}: IReviewButton) {
   return (
     <>
       {dataLength > reviewCount ? (

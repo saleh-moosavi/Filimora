@@ -9,14 +9,18 @@ export default function ListMoreDetail<
       {data.map((item, index) => {
         if (item.url && item.name) {
           return (
-            <Link key={item.name + item.url} to={item.url} target="_blank">
+            <Link
+              key={"More-Detail-Link-" + item.name + item.url}
+              to={item.url}
+              target="_blank"
+            >
               {index === 0 ? "" : " , "}
               <span className="underline">{item.name}</span>
             </Link>
           );
         } else {
           return (
-            <span key={item.relation}>
+            <span key={"More-Detail-Relation-" + item.relation}>
               {index === 0 ? "" : " , "}
               {item.relation}
             </span>

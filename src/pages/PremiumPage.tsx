@@ -59,7 +59,10 @@ export default function PremiumPage() {
       <PricingTitle />
       <section className="grid gap-5 justify-items-center md:grid-cols-2 lg:grid-cols-3">
         {pricingCards.map((item, index) => (
-          <PricingCard key={item.title + "-" + index} {...item} />
+          <PricingCard
+            key={"PricingCard-Item-" + item.title + "-" + index}
+            {...item}
+          />
         ))}
       </section>
     </div>

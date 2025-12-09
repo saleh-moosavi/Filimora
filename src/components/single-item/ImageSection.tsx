@@ -1,7 +1,7 @@
 import ImageCard from "../ImageCard";
 import { useDispatch } from "react-redux";
-import { Anime } from "../../types/apiResponse";
 import { setToast } from "../../redux/ToastSlice";
+import { IimageSection } from "../../types/PropTypes";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import { BsFillBookmarkPlusFill, BsBookmarkCheckFill } from "react-icons/bs";
 
@@ -9,11 +9,7 @@ export default function ImageSection({
   data,
   isLiked,
   onToggle,
-}: {
-  data: Anime;
-  isLiked: boolean;
-  onToggle?: () => void;
-}) {
+}: IimageSection) {
   const { addLikedAnime, removeLikedAnime } = useLocalStorage();
   const dispatch = useDispatch();
 

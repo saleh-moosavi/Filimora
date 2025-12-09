@@ -13,10 +13,10 @@ export default function Slider({ title, path, fetchDelayMs = 0 }: ISlider) {
 
   return (
     <SliderWrapper title={title} path={path}>
-      {data?.map((anime: Anime) => (
+      {data?.map((anime: Anime, index) => (
         <SwiperSlide
           className="cursor-pointer"
-          key={anime.mal_id + anime.title}
+          key={"Slider-Item-Path" + path + anime.mal_id + anime.title + index}
         >
           <SliderContent
             id={anime.mal_id}
