@@ -14,7 +14,7 @@ export default function SliderContent({
       <div className="relative rounded-lg overflow-hidden group">
         <ImageCard>
           <img
-            className="rounded-lg h-[24rem] w-full object-cover"
+            className="rounded-lg h-[24rem] w-full object-cover bg-gradient-to-tr from-my-black-min to-my-black-max text-my-white-max text-center"
             src={img}
             alt={title}
           />

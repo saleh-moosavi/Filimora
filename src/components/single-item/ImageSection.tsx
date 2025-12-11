@@ -45,7 +45,7 @@ export default function ImageSection({
       <section className="rounded-xl w-[19rem] md:w-10/12 md:max-w-80 mx-auto md:mx-0 h-full overflow-hidden">
         <ImageCard>
           <img
-            className="object-cover rounded-xl w-full h-full bg-my-black-min"
+            className="object-cover rounded-xl w-full h-full bg-gradient-to-tr from-my-black-min to-my-black-max text-my-white-max text-center"
             src={data.images?.webp?.large_image_url}
             alt={data.title_english || data.title}
           />

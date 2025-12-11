@@ -8,7 +8,7 @@ export default function CategoryItem({ item }: { item: Anime }) {
       <div className="relative rounded-lg overflow-hidden group cursor-pointer">
         <ImageCard>
           <img
-            className="rounded-lg h-[30rem] md:h-80 lg:h-96 xl:h-[30rem] w-full object-cover"
+            className="rounded-lg h-[30rem] md:h-80 lg:h-96 xl:h-[30rem] w-full object-cover bg-gradient-to-tr from-my-black-min to-my-black-max text-center text-my-white-max"
             src={item.images.webp.large_image_url}
             alt={item.title}
           />

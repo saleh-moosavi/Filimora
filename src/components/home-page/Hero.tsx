@@ -29,7 +29,7 @@ export default function Hero() {
                 <Link to={`/${item.mal_id}`} className="row-span-9">
                   <img
                     src={item.images.webp.large_image_url}
-                    className="object-cover rounded-xl shadow-lg shadow-my-white-max"
+                    className="h-full object-cover rounded-xl shadow-lg shadow-my-white-max bg-gradient-to-tr from-my-black-min to-my-black-max text-my-white-max text-center"
                     alt={item.title}
                     loading={index < 2 ? "eager" : "lazy"}
                   />
