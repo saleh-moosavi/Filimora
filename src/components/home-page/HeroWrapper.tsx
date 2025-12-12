@@ -1,27 +1,34 @@
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import { ReactNode } from "react";
-import { Swiper } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "keen-slider/keen-slider.min.css";
+import { ReactNode, useEffect } from "react";
+import { useKeenSlider } from "keen-slider/react";
 
 export default function HeroWrapper({ children }: { children: ReactNode }) {
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
+    loop: true,
+    slides: {
+      perView: 1,
+      spacing: 0,
+    },
+  });
+
+  useEffect(() => {
+    if (!slider) return;
+
+    slider.current?.update();
+
+    const interval = setInterval(() => {
+      slider.current?.next();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [slider]);
+
   return (
-    <Swiper
-      spaceBetween={30}
-      centeredSlides={true}
-      autoplay={{
-        delay: 5000,
-        disableOnInteraction: false,
-      }}
-      pagination={{
-        clickable: true,
-      }}
-      loop={true}
-      modules={[Autoplay, Pagination, Navigation]}
-      className="mySwiper"
+    <div
+      ref={sliderRef}
+      className="w-full mb-20 h-[80vh] md:h-[85vh] relative keen-slider rounded-xl overflow-hidden md:shadow-md md:shadow-my-white-min md:bg-my-black-min"
     >
       {children}
-    </Swiper>
+    </div>
   );
 }
