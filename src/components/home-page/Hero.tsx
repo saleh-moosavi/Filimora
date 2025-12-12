@@ -1,5 +1,5 @@
-import HeroWrapper from "./HeroWrapper";
 import { Link } from "react-router-dom";
+import HeroWrapper from "./HeroWrapper";
 import useHeroData from "../../hooks/useHeroData";
 
 export default function Hero() {
@@ -22,7 +22,7 @@ export default function Hero() {
       {data?.map((item, index) => (
         <div
           key={"Hero-item-" + item.mal_id}
-          className="keen-slider__slide w-full h-full flex items-center justify-center text-my-white-max"
+          className="keen-slider__slide w-full h-full flex items-start md:items-center justify-center text-my-white-max"
         >
           <img
             className="absolute inset-0 w-full h-full object-cover rounded-xl blur-md z-10 invisible md:visible"
@@ -31,7 +31,7 @@ export default function Hero() {
           />
           <div className="h-full w-full absolute inset-0 bg-my-black-max/30 invisible md:visible z-20"></div>
 
-          <div className="z-30 grid grid-rows-12 space-y-5 text-center">
+          <div className="z-30 flex flex-col space-y-5 text-center">
             <Link to={`/${item.mal_id}`} className="row-span-9 w-72 mx-auto">
               <img
                 src={item.images.webp.large_image_url}
