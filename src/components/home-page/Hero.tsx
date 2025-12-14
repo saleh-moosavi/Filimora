@@ -31,17 +31,20 @@ export default function Hero() {
           />
           <div className="h-full w-full absolute inset-0 bg-my-black-max/30 invisible md:visible z-20"></div>
 
-          <div className="z-30 flex flex-col space-y-5 text-center">
-            <Link to={`/${item.mal_id}`} className="row-span-9 w-72 mx-auto">
+          <div className="z-30 flex flex-col justify-start md:justify-center items-center gap-5 text-center h-full w-80">
+            <Link
+              to={`/${item.mal_id}`}
+              className="row-span-9 mx-auto h-[75%] w-full"
+            >
               <img
                 src={item.images.webp.large_image_url}
-                className="h-full object-cover rounded-xl shadow-lg shadow-my-white-max"
+                className="h-full w-full object-cover rounded-xl shadow-lg shadow-my-white-max bg-my-black-min"
                 alt={item.title}
                 loading={index < 2 ? "eager" : "lazy"}
               />
             </Link>
 
-            <h2 className="text-xl font-bold row-span-3">{item.title}</h2>
+            <h2 className="sm:text-lg font-bold row-span-3">{item.title}</h2>
           </div>
         </div>
       ))}

@@ -1,4 +1,3 @@
-import { SwiperSlide } from "swiper/react";
 import SliderContent from "./SliderContent";
 import SliderWrapper from "./SliderWrapper";
 import SliderSkeleton from "./SliderSkeleton";
@@ -14,8 +13,8 @@ export default function Slider({ title, path, fetchDelayMs = 0 }: ISlider) {
   return (
     <SliderWrapper title={title} path={path}>
       {data?.map((anime: Anime, index) => (
-        <SwiperSlide
-          className="cursor-pointer"
+        <article
+          className="cursor-pointer keen-slider__slide"
           key={"Slider-Item-Path" + path + anime.mal_id + anime.title + index}
         >
           <SliderContent
@@ -25,7 +24,7 @@ export default function Slider({ title, path, fetchDelayMs = 0 }: ISlider) {
             desc={anime.synopsis ?? "No description available."}
             img={anime.images?.webp?.large_image_url ?? "/placeholder.jpg"}
           />
-        </SwiperSlide>
+        </article>
       ))}
     </SliderWrapper>
   );

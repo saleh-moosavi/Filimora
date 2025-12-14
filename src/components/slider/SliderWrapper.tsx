@@ -1,8 +1,5 @@
-import "swiper/css";
-import "swiper/css/pagination";
-import { Swiper } from "swiper/react";
 import { Link } from "react-router-dom";
-import { Pagination } from "swiper/modules";
+import { useKeenSlider } from "keen-slider/react";
 import { ISliderWrapper } from "../../types/PropTypes";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 
@@ -11,6 +8,26 @@ export default function SliderWrapper({
   title,
   path,
 }: ISliderWrapper) {
+  //Create a Slider Config
+  const [sliderRef] = useKeenSlider<HTMLDivElement>({
+    loop: false,
+    slides: {
+      perView: 1.25,
+      spacing: 20,
+    },
+    breakpoints: {
+      "(min-width: 640px)": {
+        slides: { perView: 2.25, spacing: 10 },
+      },
+      "(min-width: 820px)": {
+        slides: { perView: 3.25, spacing: 10 },
+      },
+      "(min-width: 1280px)": {
+        slides: { perView: 4.5, spacing: 10 },
+      },
+    },
+  });
+
   return (
     <div>
       {/* Header of Slider */}
@@ -23,29 +40,8 @@ export default function SliderWrapper({
         </Link>
       </article>
       {/* The Slider */}
-      <section className="py-5 select-none">
-        <Swiper
-          slidesPerView={1.25}
-          spaceBetween={30}
-          grabCursor={true}
-          modules={[Pagination]}
-          breakpoints={{
-            640: {
-              slidesPerView: 2.25,
-              spaceBetween: 30,
-            },
-            820: {
-              slidesPerView: 3.25,
-              spaceBetween: 30,
-            },
-            1280: {
-              slidesPerView: 4.5,
-              spaceBetween: 30,
-            },
-          }}
-        >
-          {children}
-        </Swiper>
+      <section ref={sliderRef} className="py-5 select-none keen-slider">
+        {children}
       </section>
     </div>
   );

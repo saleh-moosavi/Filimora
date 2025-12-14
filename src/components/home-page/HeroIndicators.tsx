@@ -15,16 +15,16 @@ export default function HeroIndicators({
   return (
     <>
       <IoIosArrowBack
-        className="text-my-white-max size-10 absolute left-0 bottom-5 md:bottom-1/2 translate-y-1/2 cursor-pointer"
+        className="text-my-white-max size-10 absolute left-2 bottom-5 md:bottom-1/2 translate-y-1/2 cursor-pointer bg-my-black-max p-1 rounded-full hover:scale-110 transition-all duration-200"
         onClick={() => slider.current?.prev()}
       />
 
       <IoIosArrowForward
-        className="text-my-white-max size-10 absolute right-0 bottom-5 md:bottom-1/2 translate-y-1/2 cursor-pointer"
+        className="text-my-white-max size-10 absolute right-2 bottom-5 md:bottom-1/2 translate-y-1/2 cursor-pointer bg-my-black-max p-1 rounded-full hover:scale-110 transition-all duration-200"
         onClick={() => slider.current?.next()}
       />
       {slider.current && (
-        <div className="flex items-center gap-2 absolute right-1/2 translate-x-1/2 bottom-1 md:bottom-5 cursor-pointer">
+        <div className="flex items-center gap-2 absolute right-1/2 translate-x-1/2 bottom-1 md:bottom-2 cursor-pointer">
           {[...Array(slider.current.track.details.slides.length).keys()].map(
             (idx) => {
               return (
